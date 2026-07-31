@@ -1,0 +1,259 @@
+<div *ngIf="userToShow!=null" class="modal fade" id="userPageModal" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><span *ngIf="userToShow.id!=null"><span
+                            *ngIf="!consultOnly">Modify
+                        </span>{{userToShow.name}}'s info</span>
+                    <span *ngIf="userToShow.id==null">{{'userMgt.userPage_title_create'|translate}}</span>
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form (ngSubmit)="saveForm()" [formGroup]="userPageForm">
+                <div class="modal-body">
+
+                    <div class="form-group row mb-0 pl-2">
+                        <label for="staticEmail"
+                            class="col-sm-2 col-form-label form-control-sm">{{'userMgt.userPage_name'|translate}}</label>
+
+                        <div class="col-sm-10" *ngIf="consultOnly">
+                            <input type="text" [readonly]="consultOnly"
+                                [ngClass]="{'form-control-plaintext':consultOnly,'form-control':!consultOnly}"
+                                id="fullAddresse" value="{{userToShow.firstName}} {{userToShow.lastName}}">
+                        </div>
+
+                        <div class="input-group col-sm-10 pr-0" *ngIf="!consultOnly">
+
+                            <app-input [type]="'input'" [fieldName]="'firstName'" [inputValue]="userToShow.firstName"
+                                [withPrepend]="true" [propField]="propFirstName"
+                                [labelStr]="'userMgt.userPage_firstName'|translate" [submitted]="submitted"
+                                [consultOnly]="consultOnly" [placeholderStr]="'formValite.required'|translate">
+                            </app-input>
+                            &nbsp;
+                            <app-input [type]="'input'" [fieldName]="'lastName'" [inputValue]="userToShow.lastName"
+                                [withPrepend]="true" [propField]="propLastName"
+                                [labelStr]="'userMgt.userPage_lastName'|translate" [submitted]="submitted"
+                                [consultOnly]="consultOnly" [placeholderStr]="'formValite.required'|translate">
+                            </app-input>
+
+                        </div>
+                    </div>
+
+                    <app-input [type]="'input'" [fieldName]="'username'" [propField]="propUsername"
+                        [inputValue]="userToShow.username" [labelStr]="'userMgt.userPage_username'|translate"
+                        [submitted]="submitted" [consultOnly]="consultOnly"
+                        [placeholderStr]="'formValite.required'|translate">
+                    </app-input>
+
+                    <app-input [type]="'input'" [fieldName]="'email'" [propField]="propEmail"
+                        [inputValue]="userToShow.email" [labelStr]="'userMgt.userPage_email'|translate"
+                        [submitted]="submitted" [consultOnly]="consultOnly"
+                        [placeholderStr]="'formValite.requiredAndEmail'|translate">
+                    </app-input>
+
+                    <app-input [type]="'input'" [fieldName]="'phone'" [inputValue]="userToShow.phone"
+                        [labelStr]="'userMgt.userPage_phone'|translate" [submitted]="submitted"
+                        [consultOnly]="consultOnly">
+                    </app-input>
+
+                    <app-input [type]="'input'" [fieldName]="'website'" [inputValue]="userToShow.website"
+                        [labelStr]="'userMgt.userPage_website'|translate" [submitted]="submitted"
+                        [consultOnly]="consultOnly">
+                    </app-input>
+
+                    <!-- address info -->
+                    <div class="form-group row mb-0 pl-2">
+                        <label for="staticEmail"
+                            class="col-sm-2 col-form-label form-control-sm">{{'userMgt.userPage_addr'|translate}}</label>
+                        <div class="col-sm-10" *ngIf="consultOnly">
+                            <input type="text" [readonly]="consultOnly" class="mb-1"
+                                [ngClass]="{'form-control-plaintext':consultOnly,'form-control':!consultOnly}"
+                                id="fullAddresse" value="{{userToShow.address.fullAddresse}}">
+                        </div>
+                        <div class="col-sm-10" *ngIf="!consultOnly">
+
+                            <app-input [type]="'input'" [fieldName]="'address.street'"
+                                [inputValue]="userToShow.address.street" [withPrepend]="true"
+                                [labelStr]="'userMgt.userPage_addr_street'|translate" [submitted]="submitted"
+                                [consultOnly]="consultOnly">
+                            </app-input>
+
+                            <app-input [type]="'input'" [fieldName]="'address.suite'"
+                                [inputValue]="userToShow.address.suite" [withPrepend]="true"
+                                [labelStr]="'userMgt.userPage_addr_suite'|translate" [submitted]="submitted"
+                                [consultOnly]="consultOnly">
+                            </app-input>
+
+                            <app-input [type]="'input'" [fieldName]="'address.city'"
+                                [inputValue]="userToShow.address.city" [withPrepend]="true"
+                                [labelStr]="'userMgt.userPage_addr_city'|translate" [submitted]="submitted"
+                                [consultOnly]="consultOnly">
+                            </app-input>
+
+                            <app-input [type]="'input'" [fieldName]="'address.zipcode'"
+                                [inputValue]="userToShow.address.zipcode" [withPrepend]="true"
+                                [labelStr]="'userMgt.userPage_addr_zipcode'|translate" [submitted]="submitted"
+                                [consultOnly]="consultOnly">
+                            </app-input>
+
+                        </div>
+                    </div>
+
+                    <!-- company info -->
+                    <div class="form-group row mb-0 pl-2">
+                        <label for="staticEmail"
+                            class="col-sm-2 col-form-label form-control-sm">{{'userMgt.userPage_co'|translate}}</label>
+
+                        <div class="col-sm-10" *ngIf="consultOnly">
+                            <textarea class="form-control" id="company" rows="4"
+                                disabled="true">{{userToShow.company.allCompanyInfo}}</textarea>
+                        </div>
+                        <div class="col-sm-10" *ngIf="!consultOnly">
+
+                            <app-input [type]="'input'" [fieldName]="'company.name'"
+                                [inputValue]="userToShow.company.name" [withPrepend]="true"
+                                [labelStr]="'userMgt.userPage_co_name'|translate" [submitted]="submitted"
+                                [consultOnly]="consultOnly">
+                            </app-input>
+
+                            <app-input [type]="'input'" [fieldName]="'company.catchPhrase'"
+                                [inputValue]="userToShow.company.catchPhrase" [withPrepend]="true"
+                                [labelStr]="'userMgt.userPage_co_catch_phrase'|translate" [submitted]="submitted"
+                                [consultOnly]="consultOnly">
+                            </app-input>
+
+                            <app-input [type]="'input'" [fieldName]="'company.bs'" [inputValue]="userToShow.company.bs"
+                                [withPrepend]="true" [labelStr]="'userMgt.userPage_co_bs'|translate"
+                                [submitted]="submitted" [consultOnly]="consultOnly">
+                            </app-input>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-1 pl-2">
+                        <label class="col-sm-2 col-form-label form-control-sm">Groups</label>
+                        <div class="col-sm-10">
+                            <div class="row">
+                                <!-- Left side select -->
+                                <div class="col-sm-4">
+                                    <select id="multiselect_user_group" class="form-control" size="5"
+                                        multiple="multiple">
+                                        <option *ngFor="let group of groupsForSelect$ | async ; let i = index;"
+                                            value="1">{{group.name}}</option>
+                                    </select>
+                                </div>
+
+                                <!-- Action buttons -->
+                                <div class="col-sm-1 pl-0 ml-0 pr-0 mr-0">
+                                    <button type="button" id="multiselect_user_group_rightAll"
+                                        class="btn btn-primary mb-1 btn-block btn-sm pt-0 pb-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" class=""
+                                            fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z" />
+                                            <path fill-rule="evenodd"
+                                                d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z" />
+                                        </svg>
+                                    </button>
+                                    <button type="button" id="multiselect_user_group_rightSelected"
+                                        class="btn btn-primary mb-1 mt-0 btn-block btn-sm pt-0 pb-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                            fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                        </svg>
+                                    </button>
+                                    <button type="button" id="multiselect_user_group_leftSelected"
+                                        class="btn btn-primary mb-1 mt-0 btn-block btn-sm pt-0 pb-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                            fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+                                        </svg>
+                                    </button>
+                                    <button type="button" id="multiselect_user_group_leftAll"
+                                        class="btn btn-primary mb-1 mt-0 btn-block btn-sm pt-0 pb-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                            fill="currentColor" class="bi bi-chevron-double-left" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+                                            <path fill-rule="evenodd"
+                                                d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                <!-- Right side select -->
+                                <div class="col-sm-4">
+                                    <select id="multiselect_user_group_to" class="form-control" size="5"
+                                        multiple="multiple"></select>
+                                </div>
+                                <div class="col-sm-3"></div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <!--
+          <div class="form-group row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+            </div>
+          </div>-->
+
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <button id="btn_user_page_save" type="submit" data-toggle="modal"
+                        data-target="#modalAddConfirmation" data-dismiss="modal" class="invisible">Save</button>
+                    <button *ngIf="!consultOnly" class="btn btn-primary" type="submit">{{'btn.save'|translate}}</button>
+                    <button type="button" class="btn btn-secondary"
+                        data-dismiss="modal">{{'btn.close'|translate}}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalAddConfirmation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                    <span *ngIf="userToShow?.id==null">{{'userMgt.userPage_confirm_title_create'|translate}}</span>
+                    <span *ngIf="userToShow?.id!=null">{{'userMgt.userPage_confirm_title_mdf'|translate}}</span>
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <span *ngIf="userToShow?.id==null">
+                    {{'userMgt.userPage_confirm_create'|translate}}
+                </span>
+                <span *ngIf="userToShow?.id!=null">
+                    {{'userMgt.userPage_confirm_mdf'|translate}}
+                </span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btn_add2" class="invisible" data-dismiss="modal">Yes</button>
+                <button *ngIf="userToShow?.id==null" type="button" class="btn btn-primary" data-toggle="modal"
+                    (click)="createUser()">Yes</button>
+                <button *ngIf="userToShow?.id!=null" type="button" class="btn btn-primary" data-toggle="modal"
+                    (click)="updateUser()">Yes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="modal"
+                    data-target="#userPageModal">Non</button>
+            </div>
+        </div>
+    </div>
+</div>

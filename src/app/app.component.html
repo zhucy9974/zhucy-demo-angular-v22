@@ -1,0 +1,26 @@
+<!--
+<app-login></app-login>
+<br>
+<app-navbar [name]="fullname" (search)="criteriasearch = $event"></app-navbar>
+<app-users [criteria]="criteriasearch"></app-users>
+-->
+
+
+<!--
+<div *ngIf="condition; else loggedOut">Coucou</div>
+
+<ng-template #loggedOut> Connectez-vous </ng-template>
+
+
+<p *ngFor="let user of users">
+  {{user.name}}
+</p>
+-->
+<!--
+{{dataObj|date:'medium'}}
+-->
+<app-navbar></app-navbar>
+<div style="height: 56px;"></div>
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>

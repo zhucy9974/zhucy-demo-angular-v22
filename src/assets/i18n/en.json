@@ -1,0 +1,143 @@
+{
+    "locale":"en",
+    "field": {
+        "groupName": "Group's name",
+        "shortDesc": "Short description",
+        "longDesc": "Long description",
+        "dateCreate": "Date of creation",
+        "op":"Operation",
+
+
+        "yourName":"Your name",
+        "yourEmail":"Your email",
+        "message":"Message"
+    },
+    "title": {
+        "clientMgt": "Client management",
+        "productMgt": "Product management",
+
+        "popup_create": "Create a new group",
+
+        "confirm_modify": "Modify {{entityType}}",
+        "confirm_delete": "Delete {{entityType}}",
+        "confirm_create": "Create {{entityType}}",
+
+        "leaveMsg":"Leave a message"
+    },
+    "content":{
+        "confirm_modify": "Are you sure to modify the {{entityType}}?",
+        "confirm_delete": "Are you sure to delete the {{entityType}}?",
+        "confirm_create": "Are you sure to create the {{entityType}}?"
+    },
+    "btn": {
+        "close": "Close",
+        "save": "Save",
+        "next": "Next",
+        "previous": "Previous",
+        "createGroup":"Create group",
+        "send":"Send"
+    },
+    "tooltip": {
+        "comingSoon": "The fonction is coming soon.",
+        "consultEntity": "Consult the group's information",
+        "modifyEntity": "Modify the group's information",
+        "deleteEntity": "Delete the group"
+    },
+    "error": {
+        "401": "The email or the password is not correct, please re-enter them."
+    },
+    "formValite": {
+        "required": "Required",
+        "requiredAndEmail": "Required and right email format required"
+    },
+    "welcome": {
+        "sentence": "to Chongyang's workshop! :)"
+    },
+    "aboutWebsite":{
+        "aboutWebsite":"About the website",
+        "content1":"The purpose of this site is to improve my skills.",
+        "content2":"The data used in the demos is not real personal informations.",
+        "techUsed":"Technologies used"
+    },
+    "navbar": {
+        "title": "Chongyang's Workshop",
+        "home": "Home",
+        "userMgt": "Demos",
+        "aboutMe": "About me",
+        "aboutTheWebSite": "About the website",
+        "login": "Login",
+        "logout": "Logout",
+        "hello": "Hello",
+        "changeLanguage": "Change language",
+        "languageFR": "Français",
+        "languageEN": "English",
+        "languageZH": "中文"
+    },
+    "loginPage": {
+        "email": "Email address",
+        "securityInfo": "We'll never share your email with anyone else.",
+        "emailRequis": "Email requis",
+        "goodEmailRequis": "Please enter with the right email format.",
+        "invalidChar": "Invalid char '#'",
+        "emailNotExist": "Email not exist",
+        "password": "Password",
+        "passwordRequis": "Password requis",
+        "minLength6": "Enter least 6 characters",
+        "login": "Login",
+        "signIn": "Sign in",
+        "signUp": "Sign up",
+        "enterEmail": "Enter email",
+        "enterPassword": "Enter password",
+        "msgForTester": "You can use this account for testing, email: admin@chongyangws.com, password: 12345678"
+    },
+    "userMgt": {
+        "sidebar_title": "User management",
+        "sidebar_userList": "User list",
+        "sidebar_groupList": "Group list",
+        "sidebar_roleList": "Role list",
+        "search_username": "Username",
+        "search_firstName": "First name",
+        "search_lastName": "Last name",
+        "search_orderBy": "Order by",
+        "search_search": "Search",
+        "search_clear": "Clear",
+        "search_moreCriteria": "More criterias",
+        "search_lessCriteria": "Less criterias",
+        "save": "Save",
+        "createUser": "Create user",
+        "list_editableInfo": "You can directly modify the data in this column and save it through the button in the upper right corner.",
+        "list_username": "Username",
+        "list_name": "Name",
+        "list_email": "Email",
+        "list_website": "Website",
+        "list_city": "City",
+        "list_company": "Company",
+        "list_op": "Operation",
+        "list_op_consult": "Consult the user's information",
+        "list_op_modify": "Modify the user's information",
+        "list_op_delete": "Delete the user",
+        "list_op_confirm_del": "Are you sure to delete the user?",
+        "list_op_confirm_title_del": "Delete user",
+        "userPage_title_create": "Create a new user",
+        "userPage_name": "Name",
+        "userPage_firstName": "First name",
+        "userPage_lastName": "Last name",
+        "userPage_username": "Username",
+        "userPage_email": "Email",
+        "userPage_phone": "Phone",
+        "userPage_website": "Website",
+        "userPage_addr": "Address",
+        "userPage_addr_street": "Street",
+        "userPage_addr_suite": "Suite",
+        "userPage_addr_city": "City",
+        "userPage_addr_zipcode": "Zipcode",
+        "userPage_co": "Company",
+        "userPage_co_name": "Name",
+        "userPage_co_catch_phrase": "Catch phrase",
+        "userPage_co_bs": "Business",
+        "userPage_confirm_create": "Are you sure to create the user?",
+        "userPage_confirm_mdf": "Are you sure to modify the user?",
+        "userPage_confirm_title_create": "Create user",
+        "userPage_confirm_title_mdf": "Modify user"
+    }
+}

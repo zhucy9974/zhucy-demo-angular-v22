@@ -1,0 +1,139 @@
+{
+    "locale": "fr",
+    "field": {
+        "groupName": "Nom de groupe",
+        "shortDesc": "Description courte",
+        "longDesc": "Description longue",
+        "dateCreate": "Date de création",
+        "op": "Opération",
+
+        "yourName":"Votre nom",
+        "yourEmail":"Votre email",
+        "message":"Message"
+    },
+    "title": {
+        "clientMgt": "Gestion des clients",
+        "productMgt": "Gestion des produits",
+
+        "popup_create": "Créer un nouveau groupe",
+
+        "confirm_modify": "Modifier {{entityType}}",
+        "confirm_delete": "Supprimer {{entityType}}",
+        "confirm_create": "Créer {{entityType}}", 
+
+        
+        "leaveMsg":"Laisser a message"
+    },
+    "content":{
+        "confirm_modify": "Are you sure to modify the {{entityType}}?",
+        "confirm_delete": "Are you sure to delete the {{entityType}}?",
+        "confirm_create": "Are you sure to create the {{entityType}}?"
+    },
+    "btn": {
+        "close": "Fermer",
+        "save": "Sauvgarder",
+        "next": "Suivant",
+        "previous": "Présédent",
+        "createGroup":"Créer groupe",
+        "send":"Envoyer"
+    },
+    "tooltip": {
+        "comingSoon": "La fonctionalité arrive bientôt.",
+        "consultEntity": "Consulter l'information du groupe",
+        "modifyEntity": "Modifier l'information du groupe",
+        "deleteEntity": "Supprimer le groupe"
+    },
+    "error": {
+        "401": "L'addresse mail ou le mot de pass n'est pas correct, veuillez les resaisir."
+    },
+    "formValite": {
+        "required": "Obligatoire",
+        "requiredAndEmail": "Obligatoire et veuillez saisir le bon format d'email."
+    },
+    "welcome": {
+        "sentence": "Bienvenue à l'atelier de Chongyang! :)"
+    },
+    "aboutWebsite":{
+        "aboutWebsite":"À propos du site web",
+        "content1":"L'objectif de ce site web est de monter mes compétences.",
+        "content2":"Les données utilisées dans les démos ne sont pas des vraies informations personnelles.",
+        "techUsed":"Technologies utilisées"
+    },
+    "navbar": {
+        "title": "Atelier de Chongyang",
+        "home": "Accuil",
+        "userMgt": "Demos",
+        "aboutMe": "À propos de moi",
+        "aboutTheWebSite": "À propos du site web",
+        "login": "S'identifier",
+        "logout": "Déconnextion",
+        "hello": "Bonjour"
+    },
+    "loginPage": {
+        "email": "Adresse mail",
+        "securityInfo": "Nous ne partagerons jamais votre e-mail avec les autres.",
+        "emailRequis": "Email obligatoire",
+        "goodEmailRequis": "Veuillez saisir le bon format d'email.",
+        "invalidChar": "Caractère invalide : '#'",
+        "emailNotExist": "Email n'existe pas",
+        "password": "Mot de passe",
+        "passwordRequis": "Mot de passe obligatoire",
+        "minLength6": "Saisissez au moins 6 caractères",
+        "login": "Connection",
+        "signIn": "S'identifier",
+        "signUp": "S'inscrire",
+        "enterEmail": "Saisissez l'email",
+        "enterPassword": "Saisissez le mot de passe",
+        "msgForTester": "Vous pouvez utiliser ce compte pour tester, e-mail: admin@chongyangws.com, mot de passe: 12345678"
+    },
+    "userMgt": {
+        "sidebar_title": "Gestion des utilisateurs",
+        "sidebar_userList": "Liste des utilisateurs",
+        "sidebar_groupList": "Liste des groupes",
+        "sidebar_roleList": "Liste des rôles",
+        "search_username": "Username",
+        "search_firstName": "Prénom",
+        "search_lastName": "Nom",
+        "search_orderBy": "Trier par",
+        "search_search": "Rechercher",
+        "search_clear": "Vider",
+        "search_moreCriteria": "Plus de critaires",
+        "search_lessCriteria": "Moins de critaires",
+        "save": "Sauvgarder",
+        "createUser": "Créer utilisateur",
+        "list_editableInfo": "Vous pouvez directement modifier les données de cette colonne et les enregistrer via le bouton dans le coin supérieur droit.",
+        "list_username": "Username",
+        "list_name": "Nom",
+        "list_email": "E-mail",
+        "list_website": "Site web",
+        "list_city": "Ville",
+        "list_company": "Entreprise",
+        "list_op": "Opération",
+        "list_op_consult": "Consulter l'information de l'utilisateur",
+        "list_op_modify": "Modifier l'information de l'utilisateur",
+        "list_op_delete": "Supprimer l'utilisateur",
+        "list_op_confirm_del": "Etes-vous sûr de supprimer l'utilisateur?",
+        "list_op_confirm_title_del": "Supprimer utilisateur",
+        "userPage_title_create": "Créer un nouvel utilisateur",
+        "userPage_name": "Nom",
+        "userPage_firstName": "Prénom",
+        "userPage_lastName": "Nom",
+        "userPage_username": "Username",
+        "userPage_email": "E-mail",
+        "userPage_phone": "Téléphone",
+        "userPage_website": "Site web",
+        "userPage_addr": "Adresse",
+        "userPage_addr_street": "Rue",
+        "userPage_addr_suite": "Suite",
+        "userPage_addr_city": "Ville",
+        "userPage_addr_zipcode": "Code postal",
+        "userPage_co": "Entreprise",
+        "userPage_co_name": "Nom",
+        "userPage_co_catch_phrase": "Catch phrase",
+        "userPage_co_bs": "Entreprise",
+        "userPage_confirm_create": "Etes-vous sûr de créer l'utilisateur?",
+        "userPage_confirm_mdf": "Etes-vous sûr de modifier l'utilisateur?",
+        "userPage_confirm_title_create": "Créer utilisateur",
+        "userPage_confirm_title_mdf": "Modifier utilisateur"
+    }
+}

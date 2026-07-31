@@ -1,0 +1,27 @@
+<div class="row welcome-bg">
+    <div class="col-1"></div>
+    <div class="col-7">
+        <div style="height: 40px;"></div>
+        <div class="position-relative " style="left: 0px;"><img src="assets/images/welcome-bg.jpg" class="shadow-lg img-fluid" alt="welcome page"></div>
+
+    </div>
+    <div class="col-3">
+        <div class="shadow bg-white fixed-bottom position-absolute rounded p-4" style="left: -300px; bottom: 60px">
+            <img src="assets/images/welcome-icon.jpg" style="width: 250px;" alt="welcome icon">
+            <h4><strong>{{'welcome.sentence'|translate}}</strong></h4>
+            <br>
+            <h5 class="text-secondary"><em>"The best preparation for tomorrow is doing your best today."
+                <br>--H. Jackson Brown, Jr.</em></h5>
+            <br>
+            <div class="float-right">
+                <button class="btn btn-link" (click)="changeLanguage('en')"><strong>En</strong></button>
+                <button class="btn btn-link" (click)="changeLanguage('fr')"><strong>Fr</strong></button>
+                <button class="btn btn-link" (click)="changeLanguage('zh')"><strong>Cn</strong></button>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-2">
+
+    </div>
+</div>
