@@ -1,16 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { UnderConstructionComponent} from 'src/app/shared/under-construction/under-construction.component';
 
 @Component({
-  standalone: false,
+  standalone: true,
+  imports: [UnderConstructionComponent],
   selector: 'app-userMgt-roles',
   templateUrl: './roles.component.html',
-  styleUrls: ['./roles.component.scss']
+  styleUrls: ['./roles.component.scss'],
 })
-export class RolesComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class RolesComponent {
 }

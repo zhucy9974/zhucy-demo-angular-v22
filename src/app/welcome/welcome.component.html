@@ -17,7 +17,12 @@
                 <button class="btn btn-link" (click)="changeLanguage('en')"><strong>En</strong></button>
                 <button class="btn btn-link" (click)="changeLanguage('fr')"><strong>Fr</strong></button>
                 <button class="btn btn-link" (click)="changeLanguage('zh')"><strong>Cn</strong></button>
-
+                <h3>{{message}}</h3>
+                <button class="btn btn-primary" (click)="changerMessage()">
+                  Changer le msg
+                </button>
+                <input class="form-control" [(ngModel)]="nom" placeholder="Ecrits ton nom"/>
+                <p> Bonjour {{nom}}</p>
             </div>
         </div>
     </div>
