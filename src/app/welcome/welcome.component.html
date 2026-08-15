@@ -1,32 +1,29 @@
-<div class="row welcome-bg">
-    <div class="col-1"></div>
-    <div class="col-7">
-        <div style="height: 40px;"></div>
-        <div class="position-relative " style="left: 0px;"><img src="assets/images/welcome-bg.jpg" class="shadow-lg img-fluid" alt="welcome page"></div>
+<main class="welcome-page">
+  <section class="welcome-hero">
+    <div class="hero-image" aria-hidden="true">
+      <img src="assets/images/welcome-bg.jpg" alt="">
+    </div>
 
-    </div>
-    <div class="col-3">
-        <div class="shadow bg-white fixed-bottom position-absolute rounded p-4" style="left: -300px; bottom: 60px">
-            <img src="assets/images/welcome-icon.jpg" style="width: 250px;" alt="welcome icon">
-            <h4><strong>{{'welcome.sentence'|translate}}</strong></h4>
-            <br>
-            <h5 class="text-secondary"><em>"The best preparation for tomorrow is doing your best today."
-                <br>--H. Jackson Brown, Jr.</em></h5>
-            <br>
-            <div class="float-right">
-                <button class="btn btn-link" (click)="changeLanguage('en')"><strong>En</strong></button>
-                <button class="btn btn-link" (click)="changeLanguage('fr')"><strong>Fr</strong></button>
-                <button class="btn btn-link" (click)="changeLanguage('zh')"><strong>Cn</strong></button>
-                <h3>{{message}}</h3>
-                <button class="btn btn-primary" (click)="changerMessage()">
-                  Changer le msg
-                </button>
-                <input class="form-control" [(ngModel)]="nom" placeholder="Ecrits ton nom"/>
-                <p> Bonjour {{nom}}</p>
-            </div>
-        </div>
-    </div>
-    <div class="col-2">
+    <div class="hero-content">
+      <p class="hero-greeting">{{ 'welcome.greeting' | translate }}</p>
+      <h1>{{ 'welcome.jobTitle' | translate }}</h1>
+      <p class="hero-description">{{ 'welcome.description' | translate }}</p>
 
+      <ul class="tech-stack" [attr.aria-label]="'welcome.mainTechnologies' | translate">
+        <li>Java</li>
+        <li>Angular 22</li>
+        <li>Spring Boot</li>
+        <li>PostgreSQL</li>
+      </ul>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary btn-lg" routerLink="/demos">
+          {{ 'welcome.discoverProjects' | translate }}
+        </a>
+        <a class="btn btn-outline-dark btn-lg" routerLink="/photography">
+          {{ 'welcome.photography' | translate }}
+        </a>
+      </div>
     </div>
-</div>
+  </section>
+</main>

@@ -1,0 +1,10 @@
+.auth-link {
+  color: #62d5ca;
+  transition: color 0.2s ease;
+}
+
+.auth-link:hover,
+.auth-link:focus {
+  color: #92e6de;
+  text-decoration: none;
+}

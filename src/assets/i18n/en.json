@@ -51,18 +51,41 @@
         "requiredAndEmail": "Required and right email format required"
     },
     "welcome": {
-        "sentence": "to Chongyang's workshop! :)"
+        "sentence": "Welcome to Chongyang Studio! :)",
+        "greeting": "Hello, I'm Chongyang",
+        "jobTitle": "Senior Full Stack Java Engineer",
+        "description": "I build web applications with Angular, Spring Boot and PostgreSQL, and share a selection of my photographs.",
+        "mainTechnologies": "Main technologies",
+        "discoverProjects": "Discover my projects",
+        "photography": "Photography",
+        "aboutMe": "About me"
+    },
+    "photography": {
+        "eyebrow": "Personal gallery",
+        "title": "Photography",
+        "intro": "A selection of landscapes, journeys and moments I have chosen to share.",
+        "comingSoon": "The gallery is coming soon",
+        "comingSoonDescription": "My photographs will gradually be added to this page."
     },
     "aboutWebsite":{
         "aboutWebsite":"About the website",
-        "content1":"The purpose of this site is to improve my skills.",
-        "content2":"The data used in the demos is not real personal informations.",
-        "techUsed":"Technologies used"
+        "heroTitle1":"A place to learn, experiment",
+        "heroTitle2":"and share my projects",
+        "content1":"This website showcases my projects and technical skills.",
+        "content2":"All data displayed in the demos is fictional and does not represent real individuals.",
+        "techUsed":"Technologies used",
+        "techDescription":"Current technical architecture of the website:",
+        "frontend":"Frontend",
+        "backend":"Backend",
+        "database":"Database",
+        "hosting":"Hosting",
+        "sourceCode":"Code and tools"
     },
     "navbar": {
-        "title": "Chongyang's Workshop",
+        "title": "Chongyang Studio",
         "home": "Home",
         "userMgt": "Demos",
+        "photography": "Photography",
         "aboutMe": "About me",
         "aboutTheWebSite": "About the website",
         "login": "Login",

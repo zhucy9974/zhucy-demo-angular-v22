@@ -1,3 +1,4 @@
+import {inject} from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 import { forbiddenCharacterValidator } from 'src/app/shared/character.validator';
@@ -19,6 +20,11 @@ import {TranslateModule} from '@ngx-translate/core';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
+  private readonly formBuilder = inject(FormBuilder);
+  private readonly sharedService = inject(SharedService);
+  private readonly router = inject(Router);
+  private readonly http = inject(HttpClient);
+
   propEmail: FormControl;
   propPass: FormControl;
   loginForm: FormGroup;
@@ -27,13 +33,6 @@ export class LoginComponent implements OnInit {
   flagShowLogingRequisInfo = false;
 
   url = AppConfigService.settings?.apiUrl + 'auth/login';
-
-  constructor(
-    private formBuilder: FormBuilder,
-    private sharedService: SharedService,
-    private router: Router,
-    private http: HttpClient,
-  ) {}
 
   ngOnInit(): void {
     this.propEmail = new FormControl('', [
@@ -52,8 +51,8 @@ export class LoginComponent implements OnInit {
     this.submitted = true;
 
     this.invalidCredentials = true;
-    this.propPass.updateValueAndValidity();
-    this.propEmail.updateValueAndValidity();
+    //this.propPass.updateValueAndValidity();
+    //this.propEmail.updateValueAndValidity();
     if (this.loginForm.valid) {
       const httpOption = {
         headers: new HttpHeaders({

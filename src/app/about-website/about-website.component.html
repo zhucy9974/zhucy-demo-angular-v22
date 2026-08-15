@@ -5,7 +5,12 @@
             left: 100px;
             top: 50px;
             width: 500px;">
-                <h1><strong class="text-white">[A title/sentence here, <br>A title/sentence here]</strong></h1>
+                <h1>
+                    <strong class="text-white">
+                        {{'aboutWebsite.heroTitle1'|translate}}<br>
+                        {{'aboutWebsite.heroTitle2'|translate}}
+                    </strong>
+                </h1>
             </div>
         </div>
         <div class="row p-0 m-0">
@@ -34,10 +39,31 @@
             </div>
             
             <div class="col-5">
-                <div class="rounded shadow-lg p-3 pl-5" style="height: 400px; background-color: white;position: relative;top:150px;">
+                <div class="technology-card rounded shadow-lg p-3 pl-5">
                     <h3 class="mb-4"><strong style="color: #28a79b;">{{'aboutWebsite.techUsed'|translate}}</strong></h3>
-                    <img src="assets/images/tech-used.jpg" class="img-fluid" alt="Responsive image"
-                        style="height: 80%;">
+                    <p class="technology-intro text-secondary">{{'aboutWebsite.techDescription'|translate}}</p>
+                    <dl class="technology-list">
+                        <div>
+                            <dt>{{'aboutWebsite.frontend'|translate}}</dt>
+                            <dd>Angular 22 · TypeScript · Bootstrap</dd>
+                        </div>
+                        <div>
+                            <dt>{{'aboutWebsite.backend'|translate}}</dt>
+                            <dd>Java · Spring Boot · REST API</dd>
+                        </div>
+                        <div>
+                            <dt>{{'aboutWebsite.database'|translate}}</dt>
+                            <dd>PostgreSQL</dd>
+                        </div>
+                        <div>
+                            <dt>{{'aboutWebsite.hosting'|translate}}</dt>
+                            <dd>Firebase Hosting · Google Cloud Run</dd>
+                        </div>
+                        <div>
+                            <dt>{{'aboutWebsite.sourceCode'|translate}}</dt>
+                            <dd>Git · GitHub · Maven · npm</dd>
+                        </div>
+                    </dl>
                 </div>
             </div>
         </div>

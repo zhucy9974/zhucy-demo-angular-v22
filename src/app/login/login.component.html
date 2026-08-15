@@ -21,22 +21,24 @@
               [ngClass]="{'is-invalid': (!this.propEmail.valid)&&submitted, 'is-valid':this.propEmail.valid&&submitted}"
               id="email" aria-describedby="emailHelp" placeholder="{{'loginPage.enterEmail'|translate}}">
             <small id="emailHelp" class="form-text text-muted">{{'loginPage.securityInfo'|translate}}</small>
-            <div *ngIf="loginForm.invalid&&submitted" class="invalid-feedback">
+            @if(loginForm.invalid&&submitted){
+              <div class="invalid-feedback">
 
-              @if(propEmail.hasError('required')){
-                <span>{{'loginPage.emailRequis'|translate}}</span>
-              }
-              @if(propEmail.hasError('email')){
-                <span>{{'loginPage.goodEmailRequis'|translate}}</span>
-              }
-              @if(propEmail.hasError('forbiddenCharacter')){
-                <span> {{'loginPage.invalidChar'|translate}}</span>
-              }
-              @if(propPass.hasError('error401')){
-                <span> {{'error.401'|translate}}</span>
-              }
+                @if(propEmail.hasError('required')){
+                  <span>{{'loginPage.emailRequis'|translate}}</span>
+                }
+                @if(propEmail.hasError('email')){
+                  <span>{{'loginPage.goodEmailRequis'|translate}}</span>
+                }
+                @if(propEmail.hasError('forbiddenCharacter')){
+                  <span> {{'loginPage.invalidChar'|translate}}</span>
+                }
+                @if(propPass.hasError('error401')){
+                  <span> {{'error.401'|translate}}</span>
+                }
 
-            </div>
+              </div>
+            }
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">{{'loginPage.password'|translate}}</label>
@@ -44,19 +46,19 @@
               [ngClass]="{'is-invalid': (!this.propPass.valid)&&submitted, 'is-valid':this.propPass.valid&&submitted}"
               id="exampleInputPassword1" placeholder="{{'loginPage.enterPassword'|translate}}">
               <small id="emailHelp" class="form-text text-muted">{{'loginPage.msgForTester'|translate}}</small>
-            <div *ngIf="loginForm.invalid&&submitted" class="invalid-feedback">
-              <span *ngIf="propPass.hasError('required')">
+            @if(loginForm.invalid&&submitted){
+              <div class="invalid-feedback">
+                @if(propPass.hasError('required')){
                 {{'loginPage.passwordRequis'|translate}}
-              </span>
-              <span *ngIf="propPass.hasError('minlength')">
+                }
+                @if(propPass.hasError('minlength')){
                 {{'loginPage.minLength6'|translate}}
-              </span>
-              <span *ngIf="propPass.hasError('error401')">
+                }
+                @if(propPass.hasError('error401')){
                 {{'error.401'|translate}}
-              </span>
-
-            </div>
-
+                }
+              </div>
+            }
 
           </div>
 

@@ -7,6 +7,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { AboutWebsiteComponent } from './about-website/about-website.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { DemosComponent } from './demos/demos.component';
+import { PhotographyComponent } from './photography/photography.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'demos',
     component: DemosComponent
+  },
+  {
+    path: 'photography',
+    component: PhotographyComponent
   }, {
     path: '',
     component: WelcomeComponent

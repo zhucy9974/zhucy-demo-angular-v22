@@ -51,18 +51,41 @@
         "requiredAndEmail": "必填, 并请输入正确的邮箱地址"
     },
     "welcome": {
-        "sentence": "欢迎来到重阳工作室! :)"
+        "sentence": "欢迎来到 Chongyang Studio！:)",
+        "greeting": "你好，我是重阳",
+        "jobTitle": "资深 Java 全栈工程师",
+        "description": "我使用 Angular、Spring Boot 和 PostgreSQL 构建 Web 应用，并分享我的部分摄影作品。",
+        "mainTechnologies": "主要技术",
+        "discoverProjects": "查看我的项目",
+        "photography": "摄影作品",
+        "aboutMe": "关于我"
+    },
+    "photography": {
+        "eyebrow": "个人画廊",
+        "title": "摄影作品",
+        "intro": "分享我所记录的风景、旅途与生活瞬间。",
+        "comingSoon": "画廊即将上线",
+        "comingSoonDescription": "我的摄影作品将陆续添加到此页面。"
     },
     "aboutWebsite":{
         "aboutWebsite":"关于网站",
-        "content1":"此网站的目的是为了提高本人的职业技能。",
-        "content2":"在模拟功能中使用到的数据不是真实的个人数据。",
-        "techUsed":"用到的技术"
+        "heroTitle1":"一个学习和实践的空间",
+        "heroTitle2":"并在这里分享我的项目",
+        "content1":"本网站展示了我的项目和技术能力。",
+        "content2":"演示中显示的所有数据均为虚构，与任何真实人物无关。",
+        "techUsed":"用到的技术",
+        "techDescription":"网站当前使用的技术架构：",
+        "frontend":"前端",
+        "backend":"后端",
+        "database":"数据库",
+        "hosting":"托管",
+        "sourceCode":"代码与工具"
     },
     "navbar": {
-        "title": "重阳工作室",
+        "title": "Chongyang Studio",
         "home": "首页",
         "userMgt": "示范",
+        "photography": "摄影作品",
         "aboutMe": "关于我",
         "aboutTheWebSite": "关于网站",
         "login": "登录",
