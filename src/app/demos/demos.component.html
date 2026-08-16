@@ -14,7 +14,7 @@
                     <ul class="demos-sider-bar nav flex-column">
                         <li class="nav-item nav-item-tochange">
                             <a class="nav-link text-primary pt-0 pb-0 sub-title-text"
-                                (click)="activeItem($event);changeComponentToShow('users')" onclick="updateTooltip();activecheckMultiSelectUserGroupExist()"
+                                (click)="changeComponentToShow('users');activeItem($event)" onclick="updateTooltip();activecheckMultiSelectUserGroupExist()"
                                 href="javascript:;">
                                 <img src="assets/images/user-list-icon.png" class="img-fluid sub-title-img"
                                     alt="Responsive image">&nbsp;
@@ -23,7 +23,7 @@
                         </li>
                         <li class="nav-item nav-item-tochange">
                             <a class="nav-link text-secondary  pt-0 pb-0 sub-title-text"
-                                (click)="activeItem($event);changeComponentToShow('groups')" onclick="updateTooltip();"
+                                (click)="changeComponentToShow('groups');activeItem($event)" onclick="updateTooltip();"
                                 href="javascript:;">
                                 <img src="assets/images/group-list-icon.png" class="img-fluid sub-title-img"
                                     alt="Responsive image">&nbsp;
@@ -32,7 +32,7 @@
                         </li>
                         <li class="nav-item nav-item-tochange">
                             <a class="nav-link text-secondary  pt-0 pb-0 sub-title-text"
-                                (click)="activeItem($event);changeComponentToShow('roles')" onclick="updateTooltip()"
+                                (click)="changeComponentToShow('roles');activeItem($event)" onclick="updateTooltip()"
                                 href="javascript:;">
                                 <img src="assets/images/role-list-icon.png" class="img-fluid sub-title-img"
                                     alt="Responsive image">&nbsp;

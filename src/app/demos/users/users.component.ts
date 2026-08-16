@@ -1,7 +1,7 @@
-import { Component, Input, OnChanges, OnInit, ViewChild, TemplateRef } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, signal, ViewChild, TemplateRef } from '@angular/core';
 import { UserService } from "./user.service";
 import { User } from './user.model';
-import { Observable, of, Subject, Subscription } from "rxjs";
+import { Observable, Subject, Subscription } from "rxjs";
 import { SharedService } from '../../shared/shared.service';
 import $ from 'jquery';
 import { Router } from '@angular/router';
@@ -17,12 +17,11 @@ import { UserSearchCriterias } from './search/user-search-criterias.model';
 })
 export class UsersComponent implements OnInit {
 
-  users: User[];
+  users = signal<User[]>([]);
 
   pageNav: Page;
   criterias: UserSearchCriterias = new UserSearchCriterias();
 
-  users$: Observable<User[]> = of([]);
   userToShow: User = null;
   consultOnly: boolean = false;
   userIndexToDelete: number;
@@ -52,7 +51,7 @@ export class UsersComponent implements OnInit {
 
   private loadUserListPage(page: Observable<Page>) {
     page.subscribe((page: Page) => {
-      this.users$ = of(page.elements);
+      this.users.set(page.elements);
       this.pageNav = this.sharedService.loadPageNavInfo(page);
 
     });
@@ -64,7 +63,7 @@ export class UsersComponent implements OnInit {
     $('#users_main_div').css('height', hMainDiv - hNavbar);
   }
 
-  trackByUserId(user: any): string {
+  trackByUserId(index: number, user: User): number {
     return user.id
   }
 

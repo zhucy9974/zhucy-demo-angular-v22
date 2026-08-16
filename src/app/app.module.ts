@@ -6,6 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DemosModule } from './demos/demos.module';
 import { AppConfigService } from './app.config.service';
 import { NavbarComponent} from 'src/app/navbar/navbar.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './shared/auth.interceptor';
 
 //registerLocaleData(localeFr, 'fr-FR');
 
@@ -24,7 +26,20 @@ export function initializeApp(appConfigService: AppConfigService) {
     DemosModule,
     NavbarComponent
   ],
-  providers: [AppConfigService, { provide: APP_INITIALIZER, useFactory: initializeApp, deps: [AppConfigService], multi: true }],
+  providers: [
+    AppConfigService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializeApp,
+      deps: [AppConfigService],
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
