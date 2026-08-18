@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "zhucy-demo-angular"
-  }
+  },
+  "targets": {
+    "zhucy-demo-angular": {
+      "hosting": {
+        "studio": [
+          "chongyang-studio"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

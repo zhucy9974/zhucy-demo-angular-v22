@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "target": "studio",
     "public": "dist/zhucy-demo-angular-v22/browser",
     "ignore": [
       "firebase.json",
