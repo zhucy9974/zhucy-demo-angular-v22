@@ -52,10 +52,15 @@ h1 {
 
 .lead {
   max-width: 780px;
-  margin: 0.75rem 0 1.25rem;
+  margin: 0.75rem 0 0;
   color: #e5f4f5;
   font-size: 1.05rem;
   line-height: 1.65;
+}
+
+.lead-details {
+  margin-top: 0.35rem;
+  margin-bottom: 1.25rem;
 }
 
 .contact-list {
