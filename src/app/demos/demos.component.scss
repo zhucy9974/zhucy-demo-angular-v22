@@ -7,3 +7,19 @@
 .sub-title-text{
     font-weight: 600;
 }
+
+.demo-data-warning {
+    padding: 0.65rem 1.25rem;
+    color: #9a4f00;
+    background-color: #fff4e5;
+    border-top: 1px solid #ffd199;
+    border-bottom: 1px solid #ffd199;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.demo-data-warning span {
+    margin-right: 0.35rem;
+    color: #e67700;
+}

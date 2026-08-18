@@ -19,9 +19,9 @@
 
         "confirm_modify": "Modifier {{entityType}}",
         "confirm_delete": "Supprimer {{entityType}}",
-        "confirm_create": "Créer {{entityType}}", 
+        "confirm_create": "Créer {{entityType}}",
 
-        
+
         "leaveMsg":"留言"
     },
     "content":{
@@ -69,10 +69,21 @@
     },
     "aboutWebsite":{
         "aboutWebsite":"关于网站",
-        "heroTitle1":"一个学习和实践的空间",
-        "heroTitle2":"并在这里分享我的项目",
+        "heroTitle1":"一个提升 Angular 技能的空间",
+        "heroTitle2":"并在这里分享我的摄影作品",
         "content1":"本网站展示了我的项目和技术能力。",
         "content2":"演示中显示的所有数据均为虚构，与任何真实人物无关。",
+        "updatesTitle":"网站动态",
+        "update1Date":"2020 年 11 月",
+        "update1Content":"使用 Angular 9、Spring Boot 2.1 和 MySQL 创建网站。",
+        "update2Date":"2026 年 7 月",
+        "update2Content":"重新开始开发，并启动向 Angular 22 的迁移。",
+        "update3Date":"2026 年 8 月",
+        "update3Content":"将 MySQL 迁移至 PostgreSQL，并在 Firebase、Cloud Run 和 Neon 上完成部署。",
+        "upcomingTitle":"接下来",
+        "upcomingContent":"升级 Spring Boot，并按照当前最佳实践完成 Angular 22 迁移。",
+        "underConstruction":"此功能正在开发中。",
+        "viewGithub":"在 GitHub 上查看我的项目",
         "techUsed":"用到的技术",
         "techDescription":"网站当前使用的技术架构：",
         "frontend":"前端",
@@ -82,15 +93,15 @@
         "sourceCode":"代码与工具"
     },
     "navbar": {
-        "title": "Chongyang Studio",
-        "home": "首页",
-        "userMgt": "示范",
-        "photography": "摄影作品",
-        "aboutMe": "关于我",
-        "aboutTheWebSite": "关于网站",
-        "login": "登录",
-        "logout": "登出",
-        "hello": "您好"
+      "title": "Chongyang Studio",
+      "home": "首页",
+      "userMgt": "Angular 练习",
+      "photography": "摄影作品",
+      "aboutMe": "关于我",
+      "aboutTheWebSite": "关于网站",
+      "login": "登录",
+      "logout": "登出",
+      "hello": "您好"
     },
     "loginPage": {
         "email": "电子邮箱地址",
@@ -110,6 +121,7 @@
         "msgForTester": "您可以使用以下账号进行测试, 电子邮件: admin@chongyangws.com, 密码: 12345678"
     },
     "userMgt": {
+        "dataWarning": "页面中显示的数据均为虚构。测试时请勿输入任何真实的个人信息。",
         "sidebar_title": "用户管理",
         "sidebar_userList": "用户列表",
         "sidebar_groupList": "群组列表",
