@@ -21,12 +21,14 @@ export class DemosComponent implements OnInit {
     this.componentToShow = val;
   }
 
-  activeItem(event) {
+  activeItem(event: Event) {
+    const selectedText = (event.currentTarget as HTMLElement).innerText.replace(/\s/g, '');
+
     $('.demos-sider-bar a').each(function (index) {
       $(this).removeClass('text-primary');
       $(this).removeClass('text-secondary');
       //remove all the space for comparing
-      if ($(this).text().replace(/\s/g, '') == event.target.innerText.replace(/\s/g, '')) {
+      if ($(this).text().replace(/\s/g, '') == selectedText) {
         $(this).addClass('text-primary');
       } else {
         $(this).addClass('text-secondary');

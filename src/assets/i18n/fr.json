@@ -19,9 +19,9 @@
 
         "confirm_modify": "Modifier {{entityType}}",
         "confirm_delete": "Supprimer {{entityType}}",
-        "confirm_create": "Créer {{entityType}}", 
+        "confirm_create": "Créer {{entityType}}",
 
-        
+
         "leaveMsg":"Laisser a message"
     },
     "content":{
@@ -51,18 +51,52 @@
         "requiredAndEmail": "Obligatoire et veuillez saisir le bon format d'email."
     },
     "welcome": {
-        "sentence": "Bienvenue à l'atelier de Chongyang! :)"
+        "sentence": "Bienvenue chez Chongyang Studio ! :)",
+        "greeting": "Bonjour, je suis Chongyang",
+        "jobTitle": "Ingénieur senior Java Full Stack",
+        "description": "Je conçois des applications web avec Angular, Spring Boot et PostgreSQL, et je partage une sélection de mes photographies.",
+        "mainTechnologies": "Technologies principales",
+        "discoverProjects": "Découvrir mes projets",
+        "photography": "Photographies",
+        "aboutMe": "À propos de moi"
+    },
+    "photography": {
+        "eyebrow": "Galerie personnelle",
+        "title": "Photographies",
+        "intro": "Une sélection de paysages, de voyages et d'instants que j'ai choisi de partager.",
+        "comingSoon": "La galerie arrive bientôt",
+        "comingSoonDescription": "Mes photographies seront progressivement ajoutées à cette page."
     },
     "aboutWebsite":{
         "aboutWebsite":"À propos du site web",
-        "content1":"L'objectif de ce site web est de monter mes compétences.",
-        "content2":"Les données utilisées dans les démos ne sont pas des vraies informations personnelles.",
-        "techUsed":"Technologies utilisées"
+        "heroTitle1":"Un espace où je développe mes compétences Angular",
+        "heroTitle2":"et partage mes photographies",
+        "content1":"Ce site présente mes projets et mes compétences techniques.",
+        "content2":"Toutes les données présentées dans les démonstrations sont fictives et ne correspondent à aucune personne réelle.",
+        "updatesTitle":"Actualités du site",
+        "update1Date":"Novembre 2020",
+        "update1Content":"Création du site avec Angular 9, Spring Boot 2.1 et MySQL.",
+        "update2Date":"Juillet 2026",
+        "update2Content":"Reprise du développement et début de la migration vers Angular 22.",
+        "update3Date":"Août 2026",
+        "update3Content":"Migration de MySQL vers PostgreSQL et mise en production sur Firebase, Cloud Run et Neon.",
+        "upcomingTitle":"À venir",
+        "upcomingContent":"Migration de Spring Boot et finalisation d’Angular 22 selon les pratiques actuelles.",
+        "underConstruction":"Fonctionnalité en cours de construction.",
+        "viewGithub":"Voir mes projets sur GitHub",
+        "techUsed":"Technologies utilisées",
+        "techDescription":"Architecture technique actuelle du site :",
+        "frontend":"Frontend",
+        "backend":"Backend",
+        "database":"Base de données",
+        "hosting":"Hébergement",
+        "sourceCode":"Code et outils"
     },
     "navbar": {
-        "title": "Atelier de Chongyang",
-        "home": "Accuil",
-        "userMgt": "Demos",
+        "title": "Chongyang Studio",
+        "home": "Accueil",
+        "userMgt": "Atelier Angular",
+        "photography": "Photographies",
         "aboutMe": "À propos de moi",
         "aboutTheWebSite": "À propos du site web",
         "login": "S'identifier",
@@ -87,6 +121,7 @@
         "msgForTester": "Vous pouvez utiliser ce compte pour tester, e-mail: admin@chongyangws.com, mot de passe: 12345678"
     },
     "userMgt": {
+        "dataWarning": "Les données affichées sont fictives. Pour vos essais, ne saisissez aucune donnée personnelle réelle.",
         "sidebar_title": "Gestion des utilisateurs",
         "sidebar_userList": "Liste des utilisateurs",
         "sidebar_groupList": "Liste des groupes",

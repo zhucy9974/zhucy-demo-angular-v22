@@ -39,7 +39,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let entity of entities$ | async ; trackBy: trackByEntityId;let i = index;">
+                      <tr *ngFor="let entity of entities(); let i = index;">
                             <th scope="row">
                                 {{i+1}}
                             </th>
@@ -52,7 +52,7 @@
                             <td scope="col">
                                 {{entity.dateCreate| localDate:'medium':('locale'|translate)}}
                             </td>
-                            
+
                             <td>
 
                                 <button class="btn btn-link" data-toggle="modal" data-target="#groupPageModal"

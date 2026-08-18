@@ -1,0 +1,64 @@
+.photography-page {
+  min-height: calc(100vh - 58px);
+  padding: clamp(4rem, 8vw, 7rem) clamp(1.25rem, 8vw, 8rem);
+  background: #f7f8f8;
+}
+
+.photography-header {
+  width: min(850px, 100%);
+  margin: 0 auto 3.5rem;
+  text-align: center;
+}
+
+.photography-header > p:first-child {
+  margin-bottom: 0.75rem;
+  color: #087f76;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin-bottom: 1.25rem;
+  color: #20262d;
+  font-size: clamp(2.7rem, 6vw, 5rem);
+  font-weight: 700;
+}
+
+.photography-intro {
+  color: #626c75;
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+
+.empty-gallery {
+  width: min(1000px, 100%);
+  margin: 0 auto;
+  padding: clamp(3rem, 7vw, 6rem) 2rem;
+  text-align: center;
+  background: #fff;
+  border: 1px dashed #b8c4c7;
+  border-radius: 0.75rem;
+}
+
+.empty-gallery span {
+  display: grid;
+  width: 4rem;
+  height: 4rem;
+  margin: 0 auto 1.25rem;
+  place-items: center;
+  color: #087f76;
+  background: #eaf6f4;
+  border-radius: 50%;
+  font-size: 2rem;
+}
+
+.empty-gallery h2 {
+  color: #303840;
+  font-size: 1.5rem;
+}
+
+.empty-gallery p {
+  margin: 0;
+  color: #737d85;
+}

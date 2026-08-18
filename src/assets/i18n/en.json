@@ -51,18 +51,52 @@
         "requiredAndEmail": "Required and right email format required"
     },
     "welcome": {
-        "sentence": "to Chongyang's workshop! :)"
+        "sentence": "Welcome to Chongyang Studio! :)",
+        "greeting": "Hello, I'm Chongyang",
+        "jobTitle": "Senior Full Stack Java Engineer",
+        "description": "I build web applications with Angular, Spring Boot and PostgreSQL, and share a selection of my photographs.",
+        "mainTechnologies": "Main technologies",
+        "discoverProjects": "Discover my projects",
+        "photography": "Photography",
+        "aboutMe": "About me"
+    },
+    "photography": {
+        "eyebrow": "Personal gallery",
+        "title": "Photography",
+        "intro": "A selection of landscapes, journeys and moments I have chosen to share.",
+        "comingSoon": "The gallery is coming soon",
+        "comingSoonDescription": "My photographs will gradually be added to this page."
     },
     "aboutWebsite":{
         "aboutWebsite":"About the website",
-        "content1":"The purpose of this site is to improve my skills.",
-        "content2":"The data used in the demos is not real personal informations.",
-        "techUsed":"Technologies used"
+        "heroTitle1":"A space where I develop my Angular skills",
+        "heroTitle2":"and share my photography",
+        "content1":"This website showcases my projects and technical skills.",
+        "content2":"All data displayed in the demos is fictional and does not represent real individuals.",
+        "updatesTitle":"Site updates",
+        "update1Date":"November 2020",
+        "update1Content":"The site was created with Angular 9, Spring Boot 2.1 and MySQL.",
+        "update2Date":"July 2026",
+        "update2Content":"Development resumed and the migration to Angular 22 began.",
+        "update3Date":"August 2026",
+        "update3Content":"MySQL was migrated to PostgreSQL and the application was deployed on Firebase, Cloud Run and Neon.",
+        "upcomingTitle":"Coming next",
+        "upcomingContent":"Spring Boot migration and completion of Angular 22 using current best practices.",
+        "underConstruction":"This feature is under construction.",
+        "viewGithub":"View my projects on GitHub",
+        "techUsed":"Technologies used",
+        "techDescription":"Current technical architecture of the website:",
+        "frontend":"Frontend",
+        "backend":"Backend",
+        "database":"Database",
+        "hosting":"Hosting",
+        "sourceCode":"Code and tools"
     },
     "navbar": {
-        "title": "Chongyang's Workshop",
+        "title": "Chongyang Studio",
         "home": "Home",
-        "userMgt": "Demos",
+        "userMgt": "Angular Lab",
+        "photography": "Photography",
         "aboutMe": "About me",
         "aboutTheWebSite": "About the website",
         "login": "Login",
@@ -91,6 +125,7 @@
         "msgForTester": "You can use this account for testing, email: admin@chongyangws.com, password: 12345678"
     },
     "userMgt": {
+        "dataWarning": "The displayed data is fictional. When testing, do not enter any real personal information.",
         "sidebar_title": "User management",
         "sidebar_userList": "User list",
         "sidebar_groupList": "Group list",

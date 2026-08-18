@@ -1,18 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { RouterLink } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-  standalone: false,
+  standalone: true,
   selector: 'app-welcome',
+  imports: [RouterLink, TranslateModule],
   templateUrl: './welcome.component.html',
   styleUrls: ['./welcome.component.scss'],
 })
 export class WelcomeComponent implements OnInit {
-  constructor(private translateService: TranslateService) {}
-
   ngOnInit(): void {}
-
-  changeLanguage(language: string) {
-    this.translateService.use(language);
-  }
 }

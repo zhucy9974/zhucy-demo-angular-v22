@@ -1,24 +1,48 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  HostListener,
+  inject,
+  Input,
+  OnInit,
+  Output,
+  ViewChild,
+} from '@angular/core';
 import { UserService } from '../demos/users/user.service';
 import { User } from '../demos/users/user.model';
 import { Observable, of } from 'rxjs';
 import { SharedService } from '../shared/shared.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import $ from 'jquery';
 import { NavbarService } from './navbar.service';
+import { TranslateModule } from '@ngx-translate/core';
+import { CommonModule } from '@angular/common';
 import { registerLocaleData, getLocaleId } from '@angular/common';
 
-
 @Component({
-  standalone: false,
+  standalone: true,
+  imports: [TranslateModule, CommonModule, RouterLink, RouterLinkActive],
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
+  @ViewChild('languageDropdown')
+  private languageDropdown!: ElementRef<HTMLElement>;
+
+  private readonly router = inject(Router);
+  private readonly navbarService = inject(NavbarService);
+  private readonly sharedService = inject(SharedService);
+  private readonly userService = inject(UserService);
+  private readonly translateService = inject(TranslateService);
+
   @Input() name: string = 'Chongyang1';
   @Output() search: EventEmitter<string> = new EventEmitter();
+
+  languageMenuOpen = false;
+
   loginUserName: string;
   isLogin: boolean = false;
   firstName: string;
@@ -29,13 +53,6 @@ export class NavbarComponent implements OnInit {
   showMsgDiv: boolean = false;
   msgDivType: string;
   msgDivContent: string;
-  constructor(private userService: UserService,
-    private sharedService: SharedService,
-    private router: Router,
-    private translateService: TranslateService,
-    private navbarService: NavbarService) {
-    //setTimeout(()=>this.name='Chongyang2',2000);
-  }
 
   ngOnInit() {
     this.sharedService.getFirstName().subscribe((data: string) => {
@@ -54,14 +71,10 @@ export class NavbarComponent implements OnInit {
     });
 
     this.navbarService.getCurrentItem().subscribe((itemId: string) => {
-      $(".nav-item-tochange").removeClass("active");
-      $("#navbar_" + itemId).addClass("active");
+      $('.nav-item-tochange').removeClass('active');
+      $('#navbar_' + itemId).addClass('active');
     });
-
   }
-
-
-
 
   //code laisser pour l'exemple
   /*
@@ -69,8 +82,6 @@ export class NavbarComponent implements OnInit {
   this.sharedService.getLoginStatut().subscribe(value => {
     this.isLogin = value;
   });*/
-
-
 
   changedSearch(value) {
     this.search.emit(value);
@@ -83,17 +94,32 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['']);
   }
 
+  toggleLanguageMenu(): void {
+    this.languageMenuOpen = !this.languageMenuOpen;
+  }
+
+  @HostListener('document:click', ['$event'])
+  closeLanguageMenuOnOutsideClick(event: MouseEvent): void {
+    const dropdownElement = this.languageDropdown.nativeElement;
+    const clickedElement = event.target as Node;
+
+    if (!dropdownElement.contains(clickedElement)) {
+      this.languageMenuOpen = false;
+    }
+  }
+
   changeLanguage(language: string) {
     this.translateService.use(language);
     this.sharedService.sendLocaleChanged(language);
+    this.languageMenuOpen = false;
   }
 
   activeItem(event) {
     this.showMsgDiv = false;
-    $(".nav-item-tochange").removeClass("active");
-    $(".nav-item-tochange").each(function (index) {
+    $('.nav-item-tochange').removeClass('active');
+    $('.nav-item-tochange').each(function (index) {
       if (event.target.innerText == $(this).text()) {
-        $(this).addClass("active");
+        $(this).addClass('active');
       }
     });
   }
@@ -101,5 +127,4 @@ export class NavbarComponent implements OnInit {
   closeMsgDiv() {
     this.showMsgDiv = false;
   }
-
 }

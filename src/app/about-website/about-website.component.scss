@@ -1,6 +1,159 @@
 .about-site-bg {
     background-image: url(../../assets/images/about-site-bg.jpg);
-    background-size: cover;
-    height: 500px;
-    background-position: center;
+    background-color: #f1f3f5;
+    background-size: 100% 500px;
+    background-repeat: no-repeat;
+    min-height: 500px;
+    height: auto;
+    padding-bottom: 2rem;
+    background-position: center top;
+}
+
+.about-site-hero {
+    position: relative;
+    top: 50px;
+    left: 6vw;
+    width: calc(100vw - 12vw);
+    max-width: 780px;
+}
+
+.about-site-hero h1 {
+    font-size: 2.15rem;
+    line-height: 1.2;
+}
+
+.about-cards-row {
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+
+.about-cards-row > [class*="col-"] {
+    display: flex;
+    align-items: stretch;
+}
+
+.message-card,
+.site-updates-card,
+.technology-card {
+    margin-top: 210px;
+    height: auto;
+    width: 100%;
+    flex: 1;
+    background-color: white;
+    padding-bottom: 1.5rem !important;
+}
+
+.message-card {
+    display: flow-root;
+}
+
+.construction-note {
+    padding: 0.5rem 0.65rem;
+    margin: -0.5rem 0 0.75rem;
+    color: #856404;
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    border-radius: 0.25rem;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 767.98px) {
+    .about-site-hero {
+        top: 30px;
+        left: 1.5rem;
+        width: calc(100vw - 3rem);
+    }
+
+    .about-site-hero h1 {
+        font-size: 1.75rem;
+    }
+
+    .about-cards-row {
+        padding-right: 0.75rem;
+        padding-left: 0.75rem;
+    }
+}
+
+.technology-card {
+    min-height: 0;
+}
+
+.site-updates-card {
+    min-height: 0;
+}
+
+.site-update-date {
+    color: #287f77;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.site-update-list {
+    margin: 0;
+    list-style-position: inside;
+}
+
+.site-update-list li {
+    color: #ff8100d9;
+    margin-bottom: 0.65rem;
+}
+
+.site-update-list p,
+.site-update-next p {
+    color: #5f6871;
+    font-size: 0.9rem;
+    line-height: 1.25;
+    margin: 0.15rem 0 0;
+}
+
+.site-update-next {
+    padding-top: 0.55rem;
+    border-top: 1px solid #e9ecef;
+}
+
+.technology-intro {
+    margin-bottom: 1rem;
+}
+
+.technology-list {
+    margin: 0;
+}
+
+.technology-list > div {
+    display: grid;
+    grid-template-columns: 7.5rem 1fr;
+    gap: 0.75rem;
+    padding: 0.45rem 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.technology-list > div:last-child {
+    border-bottom: 0;
+}
+
+.technology-list dt {
+    color: #287f77;
+    font-weight: 600;
+}
+
+.technology-list dd {
+    margin: 0;
+    color: #5f6871;
+}
+
+.github-profile-link {
+    display: inline-block;
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #e9ecef;
+    color: #287f77;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.github-profile-link:hover {
+    color: #1d5f59;
+    text-decoration: underline;
 }

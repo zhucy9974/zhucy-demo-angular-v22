@@ -1,43 +1,86 @@
 <div class="row about-site-bg">
     <div class="col-12 p-0 ">
         <div class="row p-0 m-0">
-            <div style="position: relative;
-            left: 100px;
-            top: 50px;
-            width: 500px;">
-                <h1><strong class="text-white">[A title/sentence here, <br>A title/sentence here]</strong></h1>
+            <div class="about-site-hero">
+                <h1>
+                    <strong class="text-white">
+                        {{'aboutWebsite.heroTitle1'|translate}}<br>
+                        {{'aboutWebsite.heroTitle2'|translate}}
+                    </strong>
+                </h1>
             </div>
         </div>
-        <div class="row p-0 m-0">
-            <div class="col-4">
-                <div class="rounded shadow-lg p-3" style="background-color: white;position: relative;height: 385px;
-    top: 150px;
-                ">
+        <div class="about-cards-row row m-0">
+            <div class="col-3">
+                <div class="message-card rounded shadow-lg p-3">
                     <h3 class="mb-4"><strong style="color:#0089ffe3">{{'title.leaveMsg'|translate}}</strong></h3>
+                    <p class="construction-note">
+                        <span aria-hidden="true">🚧</span>
+                        {{'aboutWebsite.underConstruction'|translate}}
+                    </p>
                     <input type="text" class="form-control mb-1" placeholder="{{'field.yourName'|translate}}" disabled/>
                     <input type="text" class="form-control mb-1" placeholder="{{'field.yourEmail'|translate}}" disabled/>
-                    <textarea class="form-control" rows="6" placeholder="{{'field.message'|translate}}" disabled></textarea>
+                    <textarea class="form-control" rows="4" placeholder="{{'field.message'|translate}}" disabled></textarea>
                     <button type="button" class="btn btn-primary float-right mt-3" disabled="true">{{'btn.send'|translate}}</button>
                 </div>
             </div>
-            <div class="col-3">
-                <div class="rounded shadow-lg p-3" style="height: 240px; background-color: white;position: relative;top: 270px;">
-                    <h3 class="mb-3"><strong style="color:#ff8100d9;">{{'aboutWebsite.aboutWebsite'|translate}}</strong></h3>
-                    <div class="pl-3 pr-3">
-                        <h6 class="text-secondary">{{'aboutWebsite.content1'|translate}}
-                            <br>
-                            {{'aboutWebsite.content2'|translate}}
-                        </h6>
+            <div class="col-4">
+                <div class="site-updates-card rounded shadow-lg p-3">
+                    <h3 class="mb-2"><strong style="color:#ff8100d9;">{{'aboutWebsite.updatesTitle'|translate}}</strong></h3>
+                    <ol class="site-update-list pl-3 pr-2">
+                        <li>
+                            <span class="site-update-date">{{'aboutWebsite.update1Date'|translate}}</span>
+                            <p>{{'aboutWebsite.update1Content'|translate}}</p>
+                        </li>
+                        <li>
+                            <span class="site-update-date">{{'aboutWebsite.update2Date'|translate}}</span>
+                            <p>{{'aboutWebsite.update2Content'|translate}}</p>
+                        </li>
+                        <li>
+                            <span class="site-update-date">{{'aboutWebsite.update3Date'|translate}}</span>
+                            <p>{{'aboutWebsite.update3Content'|translate}}</p>
+                        </li>
+                    </ol>
+                    <div class="site-update-next pl-3 pr-2">
+                        <span class="site-update-date">{{'aboutWebsite.upcomingTitle'|translate}}</span>
+                        <p>{{'aboutWebsite.upcomingContent'|translate}}</p>
                     </div>
 
                 </div>
             </div>
             
             <div class="col-5">
-                <div class="rounded shadow-lg p-3 pl-5" style="height: 400px; background-color: white;position: relative;top:150px;">
+                <div class="technology-card rounded shadow-lg p-3 pl-5">
                     <h3 class="mb-4"><strong style="color: #28a79b;">{{'aboutWebsite.techUsed'|translate}}</strong></h3>
-                    <img src="assets/images/tech-used.jpg" class="img-fluid" alt="Responsive image"
-                        style="height: 80%;">
+                    <p class="technology-intro text-secondary">{{'aboutWebsite.techDescription'|translate}}</p>
+                    <dl class="technology-list">
+                        <div>
+                            <dt>{{'aboutWebsite.frontend'|translate}}</dt>
+                            <dd>Angular 22 · TypeScript · Bootstrap</dd>
+                        </div>
+                        <div>
+                            <dt>{{'aboutWebsite.backend'|translate}}</dt>
+                            <dd>Java · Spring Boot · REST API</dd>
+                        </div>
+                        <div>
+                            <dt>{{'aboutWebsite.database'|translate}}</dt>
+                            <dd>PostgreSQL hosted on Neon</dd>
+                        </div>
+                        <div>
+                            <dt>{{'aboutWebsite.hosting'|translate}}</dt>
+                            <dd>Firebase Hosting · Google Cloud Run</dd>
+                        </div>
+                        <div>
+                            <dt>{{'aboutWebsite.sourceCode'|translate}}</dt>
+                            <dd>Git · GitHub · Maven · npm</dd>
+                        </div>
+                    </dl>
+                    <a class="github-profile-link"
+                       href="https://github.com/zhucy9974"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        {{'aboutWebsite.viewGithub'|translate}} <span aria-hidden="true">↗</span>
+                    </a>
                 </div>
             </div>
         </div>

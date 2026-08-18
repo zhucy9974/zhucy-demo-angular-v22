@@ -1,52 +1,83 @@
-<div class="fixed-top" >
+<div class="fixed-top">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" id="navbar_div">
-    <a class="navbar-brand" routerLink="welcome"
-      (click)="activeItem($event)"><strong>{{'navbar.title'|translate}}</strong></a>
+    <a class="navbar-brand" routerLink="/welcome">
+      <strong>{{'navbar.title'|translate}}</strong>
+    </a>
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
-      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item nav-item-tochange active">
-          <a class="nav-link" (click)="activeItem($event)" routerLink="welcome">{{'navbar.home'|translate}}</a>
+
+        <li class="nav-item"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact:true}">
+          <a class="nav-link" routerLink="/welcome">{{'navbar.home'|translate}}</a>
         </li>
-        <li id="navbar_demos" class="nav-item nav-item-tochange ">
-          <a class="nav-link" (click)="activeItem($event)" routerLink="demos"
-            onclick="updateTooltip();activecheckMultiSelectUserGroupExist();">{{'navbar.userMgt'|translate}}</a>
+
+        <li class="nav-item"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact:true}">
+          <a class="nav-link" routerLink="/demos">{{'navbar.userMgt'|translate}}</a>
         </li>
-        <li id="navbar_aboutMe" class="nav-item nav-item-tochange ">
-          <a class="nav-link" (click)="activeItem($event)" routerLink="aboutMe">{{'navbar.aboutMe'|translate}}</a>
+
+        <li class="nav-item"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact:true}">
+          <a class="nav-link" routerLink="/photography">{{'navbar.photography'|translate}}</a>
         </li>
-        <li id="navbar_aboutWebsite" class="nav-item nav-item-tochange ">
-          <a class="nav-link" (click)="activeItem($event)"
-            routerLink="aboutWebsite">{{'navbar.aboutTheWebSite'|translate}}</a>
+
+        <li class="nav-item"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact:true}">
+          <a class="nav-link" routerLink="/aboutMe">{{'navbar.aboutMe'|translate}}</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="javascript:;" id="navbarDropdownMenuLink" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            {{'navbar.changeLanguage'|translate}}
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="javascript:;" (click)="changeLanguage('en')"
-              onclick="updateTooltip();">{{'navbar.languageEN'|translate}}</a>
-            <a class="dropdown-item" href="javascript:;" (click)="changeLanguage('fr')"
-              onclick="updateTooltip();">{{'navbar.languageFR'|translate}}</a>
-            <a class="dropdown-item" href="javascript:;" (click)="changeLanguage('zh')"
-              onclick="updateTooltip();">{{'navbar.languageZH'|translate}}</a>
+
+        <li class="nav-item"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact:true}">
+          <a class="nav-link" routerLink="/aboutWebsite">{{'navbar.aboutTheWebSite'|translate}}</a>
+        </li>
+
+        <li #languageDropdown class="nav-item dropdown">
+          <button type="button"
+                  class="nav-link dropdown-toggle btn btn-link"
+                  (click)="toggleLanguageMenu()"
+          > {{'navbar.changeLanguage'|translate}}
+          </button>
+          @if(languageMenuOpen){
+          <div class="dropdown-menu show">
+            <button type="button" class="dropdown-item" (click)="changeLanguage('en')">
+              {{'navbar.languageEN' | translate}}
+            </button>
+            <button type="button" class="dropdown-item" (click)="changeLanguage('fr')">
+              {{'navbar.languageFR' | translate}}
+            </button>
+            <button type="button" class="dropdown-item" (click)="changeLanguage('zh')">
+              {{'navbar.languageZH' | translate}}
+            </button>
           </div>
+          }
         </li>
+
       </ul>
-      <span class="text-white" *ngIf="firstName!=null">
-        <strong>{{'navbar.hello'|translate}}</strong>
+
+      @if(firstName!=null){
+      <span class="text-white">
+          <strong>{{'navbar.hello'|translate}}</strong>
         <!--{{(user$|async)?.name}}--> {{firstName}} |
-        <a (click)="logout()" href="javascript:;"
-          class="text-primary"><strong>{{'navbar.logout'|translate}}</strong></a>
-      </span>
-      <span class="text-white" *ngIf="firstName==null">
-        <a routerLink="login" class="text-primary"><strong>{{'navbar.login'|translate}}</strong></a>
-      </span>
+          <button type="button"
+                  class="auth-link btn btn-link p-0 align-baseline"
+                  (click)="logout()"><strong>{{'navbar.logout'|translate}}</strong></button>
+        </span>
+      } @else {
+      <span class="text-white">
+          <a routerLink="/login" class="auth-link"><strong>{{'navbar.login'|translate}}</strong></a>
+        </span>
+      }
     </div>
   </nav>
   <div class="row">
@@ -58,9 +89,9 @@
   'alert-danger':msgDivType=='danger'}" style="z-index: 9999;">
       <a href="javascript:;" (click)="closeMsgDiv()">
         <svg style="position: absolute;top: 1px;right: 1px;" width="1em" height="1em" viewBox="0 0 16 16"
-          class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+             class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd"
-            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
         </svg>
       </a>
       {{msgDivContent}}
