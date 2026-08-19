@@ -93,7 +93,8 @@ export class SharedService {
     const username: string = sessionStorage.getItem('username');
     if (username === null) {
       this.sendShowMsgDiv({ msgType: 'info', msg: 'Please login for going to the page which you want.' });
-      this.router.navigate(['login']);
+      const returnUrl = this.router.url !== '/login' ? this.router.url : '/demos';
+      this.router.navigate(['login'], { queryParams: { returnUrl } });
     }
   }
 

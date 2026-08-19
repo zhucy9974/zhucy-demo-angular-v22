@@ -1,4 +1,80 @@
-/*
-.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
-    background-color: #color;
-  }*/
+.users-table-scroll {
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+
+.users-table-scroll table {
+  min-width: 1120px;
+}
+
+.users-pagination {
+  display: flex;
+  justify-content: flex-end;
+  overflow-x: auto;
+}
+
+.mobile-pagination {
+  display: none;
+}
+
+@media (max-width: 991.98px) {
+  .users-search-column,
+  .users-actions-column {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .users-actions-column br {
+    display: none;
+  }
+
+  .users-actions-column .float-right {
+    float: none !important;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .users-table-scroll {
+    margin-right: 0 !important;
+    overflow-x: auto;
+    padding-bottom: 0.4rem;
+    border-top: 1px solid #dee2e6;
+    border-bottom: 1px solid #dee2e6;
+  }
+
+  .users-table-scroll table {
+    margin-left: 0 !important;
+    margin-bottom: 0;
+  }
+
+  .users-table-scroll thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: white;
+  }
+
+  .users-pagination-row {
+    display: block;
+    width: 100%;
+  }
+
+  .mobile-pagination {
+    display: flex;
+    margin: 0 1rem;
+    padding-top: 0.25rem;
+  }
+
+  .users-pagination {
+    justify-content: flex-start;
+    padding: 0.75rem 0 0.25rem;
+    background: white;
+  }
+
+  .users-pagination .pagination {
+    flex-wrap: nowrap;
+    margin-bottom: 0;
+  }
+}

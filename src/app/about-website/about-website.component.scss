@@ -1,4 +1,5 @@
 .about-site-bg {
+    margin: 0;
     background-image: url(../../assets/images/about-site-bg.jpg);
     background-color: #f1f3f5;
     background-size: 100% 500px;
@@ -57,20 +58,78 @@
     font-size: 0.85rem;
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
+    .about-site-bg {
+        background-size: auto 300px;
+        background-position: center top;
+        padding-bottom: 1.25rem;
+    }
+
     .about-site-hero {
-        top: 30px;
-        left: 1.5rem;
-        width: calc(100vw - 3rem);
+        position: static;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        max-width: none;
+        min-height: 230px;
+        padding: 1.5rem;
     }
 
     .about-site-hero h1 {
-        font-size: 1.75rem;
+        max-width: 680px;
+        margin: 0;
+        font-size: clamp(1.65rem, 6vw, 2.15rem);
     }
 
     .about-cards-row {
-        padding-right: 0.75rem;
-        padding-left: 0.75rem;
+        padding: 0 1rem;
+    }
+
+    .about-cards-row > [class*="col-"] {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .message-card,
+    .site-updates-card,
+    .technology-card {
+        margin-top: 1rem;
+    }
+
+    .technology-card {
+        padding: 1.25rem !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .about-site-bg {
+        background-size: auto 250px;
+    }
+
+    .about-site-hero {
+        min-height: 190px;
+        padding: 1.25rem;
+    }
+
+    .about-cards-row {
+        padding: 0 0.75rem;
+    }
+
+    .message-card,
+    .site-updates-card,
+    .technology-card {
+        padding: 1.1rem !important;
+    }
+
+    .message-card h3,
+    .site-updates-card h3,
+    .technology-card h3 {
+        font-size: 1.45rem;
+    }
+
+    .technology-list > div {
+        grid-template-columns: 1fr;
+        gap: 0.15rem;
     }
 }
 

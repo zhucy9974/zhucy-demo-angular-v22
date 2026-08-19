@@ -42,6 +42,7 @@ export class NavbarComponent implements OnInit {
   @Output() search: EventEmitter<string> = new EventEmitter();
 
   languageMenuOpen = false;
+  mobileMenuOpen = false;
 
   loginUserName: string;
   isLogin: boolean = false;
@@ -91,7 +92,22 @@ export class NavbarComponent implements OnInit {
     //this.sharedService.sendLoginStatut(false);
     sessionStorage.clear();
     this.firstName = null;
+    this.closeMobileMenu();
     this.router.navigate(['']);
+  }
+
+  toggleMobileMenu(): void {
+    this.mobileMenuOpen = !this.mobileMenuOpen;
+  }
+
+  closeMobileMenu(): void {
+    this.mobileMenuOpen = false;
+    this.languageMenuOpen = false;
+  }
+
+  navigateFromMenu(): void {
+    this.closeMobileMenu();
+    this.closeMsgDiv();
   }
 
   toggleLanguageMenu(): void {
@@ -112,6 +128,7 @@ export class NavbarComponent implements OnInit {
     this.translateService.use(language);
     this.sharedService.sendLocaleChanged(language);
     this.languageMenuOpen = false;
+    this.closeMobileMenu();
   }
 
   activeItem(event) {

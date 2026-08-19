@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 import { forbiddenCharacterValidator } from 'src/app/shared/character.validator';
 import { UserService } from "../demos/users/user.service";
-import { Router } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { SharedService } from '../shared/shared.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AppConfigService } from '../app.config.service';
@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
   private readonly formBuilder = inject(FormBuilder);
   private readonly sharedService = inject(SharedService);
   private readonly router = inject(Router);
+  private readonly route = inject(ActivatedRoute);
   private readonly http = inject(HttpClient);
 
   propEmail: FormControl;
@@ -81,7 +82,11 @@ export class LoginComponent implements OnInit {
             sessionStorage.setItem('username', res['username']);
             sessionStorage.setItem('firstName', res['firstName']);
             this.sharedService.sendFirstName(res['firstName']);
-            this.router.navigate(['welcome']);
+            const requestedUrl = this.route.snapshot.queryParamMap.get('returnUrl');
+            const returnUrl = requestedUrl?.startsWith('/') && !requestedUrl.startsWith('//')
+              ? requestedUrl
+              : '/welcome';
+            this.router.navigateByUrl(returnUrl);
           }
         });
     }

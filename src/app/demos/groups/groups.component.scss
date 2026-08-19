@@ -1,0 +1,79 @@
+.groups-table-scroll {
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+}
+
+.groups-table-scroll table {
+    min-width: 760px;
+}
+
+.groups-pagination {
+    display: flex;
+    justify-content: flex-end;
+    overflow-x: auto;
+}
+
+.mobile-pagination {
+    display: none;
+}
+
+@media (max-width: 991.98px) {
+    .groups-search-column,
+    .groups-actions-column {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+
+    .groups-actions-column br {
+        display: none;
+    }
+
+    .groups-actions-column .float-right {
+        float: none !important;
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 0.75rem;
+    }
+
+    .groups-table-scroll {
+        margin-right: 0 !important;
+        overflow-x: auto;
+        padding-bottom: 0.4rem;
+        border-top: 1px solid #dee2e6;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    .groups-table-scroll table {
+        margin-left: 0 !important;
+        margin-bottom: 0;
+    }
+
+    .groups-table-scroll thead th {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        background: white;
+    }
+
+    .groups-pagination-row {
+        display: block;
+        width: 100%;
+    }
+
+    .mobile-pagination {
+        display: flex;
+        margin: 0 1rem;
+        padding-top: 0.25rem;
+    }
+
+    .groups-pagination {
+        justify-content: flex-start;
+        padding: 0.75rem 0 0.25rem;
+        background: white;
+    }
+
+    .groups-pagination .pagination {
+        flex-wrap: nowrap;
+        margin-bottom: 0;
+    }
+}
