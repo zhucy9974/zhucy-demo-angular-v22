@@ -118,7 +118,7 @@
         "signUp": "S'inscrire",
         "enterEmail": "Saisissez l'email",
         "enterPassword": "Saisissez le mot de passe",
-        "msgForTester": "Vous pouvez utiliser ce compte pour tester, e-mail: admin@chongyangws.com, mot de passe: 12345678"
+        "msgForTester": "Vous pouvez utiliser ce compte pour tester, e-mail : visitor@cy.studio.com, mot de passe : 12345678"
     },
     "userMgt": {
         "dataWarning": "Les données affichées sont fictives. Pour vos essais, ne saisissez aucune donnée personnelle réelle.",
@@ -170,5 +170,27 @@
         "userPage_confirm_mdf": "Etes-vous sûr de modifier l'utilisateur?",
         "userPage_confirm_title_create": "Créer utilisateur",
         "userPage_confirm_title_mdf": "Modifier utilisateur"
+    },
+    "stats": {
+        "title": "Statistiques des visites",
+        "description": "Suivez l'activité et la fréquentation de votre site.",
+        "pending": "API à connecter",
+        "ready": "Données à jour",
+        "summary": "Résumé des visites",
+        "today": "Visites aujourd'hui",
+        "week": "Cette semaine",
+        "total": "Total des visites",
+        "lastVisit": "Dernière visite",
+        "traffic": "Évolution du trafic",
+        "lastSevenDays": "Sept derniers jours",
+        "noDataTitle": "Aucune donnée pour le moment",
+        "noDataDescription": "Les visites enregistrées apparaîtront ici.",
+        "loading": "Chargement des statistiques…",
+        "errorTitle": "Impossible de charger les statistiques",
+        "errorDescription": "Vérifiez que l'API est démarrée et que votre compte est autorisé.",
+        "retry": "Réessayer",
+        "excludeDevice": "Exclure cet appareil",
+        "includeDevice": "Réactiver le comptage",
+        "deviceExcluded": "Les prochaines visites effectuées depuis cet appareil ne seront pas comptées."
     }
 }

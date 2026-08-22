@@ -118,7 +118,7 @@
         "signUp": "注册",
         "enterEmail": "输入邮箱地址",
         "enterPassword": "输入密码",
-        "msgForTester": "您可以使用以下账号进行测试, 电子邮件: admin@chongyangws.com, 密码: 12345678"
+        "msgForTester": "您可以使用以下账号进行测试，电子邮件：visitor@cy.studio.com，密码：12345678"
     },
     "userMgt": {
         "dataWarning": "页面中显示的数据均为虚构。测试时请勿输入任何真实的个人信息。",
@@ -170,5 +170,27 @@
         "userPage_confirm_mdf": "您确定修改这个用户吗?",
         "userPage_confirm_title_create": "创建用户",
         "userPage_confirm_title_mdf": "修改用户"
+    },
+    "stats": {
+        "title": "访问统计",
+        "description": "跟踪网站的访问量和活动。",
+        "pending": "API 尚未连接",
+        "ready": "数据已更新",
+        "summary": "访问摘要",
+        "today": "今日访问",
+        "week": "本周访问",
+        "total": "总访问量",
+        "lastVisit": "最近访问",
+        "traffic": "流量趋势",
+        "lastSevenDays": "最近七天",
+        "noDataTitle": "暂无数据",
+        "noDataDescription": "记录的访问将在此处显示。",
+        "loading": "正在加载统计数据…",
+        "errorTitle": "无法加载统计数据",
+        "errorDescription": "请检查 API 是否已启动以及您的账户是否有权限。",
+        "retry": "重试",
+        "excludeDevice": "排除此设备",
+        "includeDevice": "恢复访问统计",
+        "deviceExcluded": "今后此设备的访问将不计入统计。"
     }
 }

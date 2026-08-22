@@ -1,0 +1,95 @@
+<main class="stats-page">
+  <header class="stats-header">
+    <div>
+      <p class="stats-eyebrow">Administration</p>
+      <h1>{{ 'stats.title' | translate }}</h1>
+      <p class="stats-description">{{ 'stats.description' | translate }}</p>
+    </div>
+    <div class="stats-header-actions">
+      <button
+        type="button"
+        class="tracking-button"
+        [class.tracking-button-excluded]="trackingExcluded"
+        [attr.aria-pressed]="trackingExcluded"
+        (click)="toggleVisitTracking()">
+        <span aria-hidden="true">{{ trackingExcluded ? '✓' : '⊘' }}</span>
+        {{ (trackingExcluded ? 'stats.includeDevice' : 'stats.excludeDevice') | translate }}
+      </button>
+      @if (!loading && !error) {
+        <span class="stats-status stats-status-ready">{{ 'stats.ready' | translate }}</span>
+      }
+    </div>
+  </header>
+
+  @if (trackingExcluded) {
+    <p class="tracking-notice" role="status">{{ 'stats.deviceExcluded' | translate }}</p>
+  }
+
+  @if (error) {
+    <section class="stats-alert" role="alert">
+      <div>
+        <strong>{{ 'stats.errorTitle' | translate }}</strong>
+        <p>{{ 'stats.errorDescription' | translate }}</p>
+      </div>
+      <button type="button" class="btn btn-outline-dark" (click)="loadStats()">
+        {{ 'stats.retry' | translate }}
+      </button>
+    </section>
+  }
+
+  <section class="stats-grid" [attr.aria-label]="'stats.summary' | translate">
+    <article class="stats-card">
+      <span>{{ 'stats.today' | translate }}</span>
+      <strong>{{ loading ? '…' : (stats?.today ?? '—') }}</strong>
+    </article>
+    <article class="stats-card">
+      <span>{{ 'stats.week' | translate }}</span>
+      <strong>{{ loading ? '…' : (stats?.week ?? '—') }}</strong>
+    </article>
+    <article class="stats-card">
+      <span>{{ 'stats.total' | translate }}</span>
+      <strong>{{ loading ? '…' : (stats?.total ?? '—') }}</strong>
+    </article>
+    <article class="stats-card">
+      <span>{{ 'stats.lastVisit' | translate }}</span>
+      <strong class="stats-date">
+        @if (loading) {
+          …
+        } @else if (stats?.lastVisit) {
+          {{ stats!.lastVisit | date:'dd/MM/yyyy HH:mm' }}
+        } @else {
+          —
+        }
+      </strong>
+    </article>
+  </section>
+
+  <section class="stats-panel">
+    <div class="stats-panel-heading">
+      <div>
+        <h2>{{ 'stats.traffic' | translate }}</h2>
+        <p>{{ 'stats.lastSevenDays' | translate }}</p>
+      </div>
+    </div>
+
+    @if (stats?.daily?.length) {
+      <div class="stats-chart" [attr.aria-label]="'stats.traffic' | translate">
+        @for (day of stats!.daily; track day.date) {
+          <div class="stats-bar-column">
+            <span class="stats-bar-value">{{ day.count }}</span>
+            <div class="stats-bar-track">
+              <div class="stats-bar" [style.height.%]="barHeight(day.count)"></div>
+            </div>
+            <time [attr.datetime]="day.date">{{ day.date | date:'dd/MM' }}</time>
+          </div>
+        }
+      </div>
+    } @else {
+      <div class="stats-empty">
+        <span class="stats-empty-icon" aria-hidden="true">↗</span>
+        <h3>{{ loading ? ('stats.loading' | translate) : ('stats.noDataTitle' | translate) }}</h3>
+        <p>{{ 'stats.noDataDescription' | translate }}</p>
+      </div>
+    }
+  </section>
+</main>

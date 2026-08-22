@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import localeFr from '@angular/common/locales/fr'
 import localeZh from '@angular/common/locales/zh'
 import localeEn from '@angular/common/locales/en'
 import { registerLocaleData } from '@angular/common';
+import { VisitStatsService } from './admin/stats/visit-stats.service';
 
 @Component({
   standalone: false,
@@ -11,7 +12,7 @@ import { registerLocaleData } from '@angular/common';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'my-project';
   fullname = 'Chongyang3';
   criteriasearch: string;
@@ -24,12 +25,31 @@ export class AppComponent {
     { name: 'Marc', age: 4 },
   ];
 
-  constructor(translate: TranslateService) {
+  constructor(
+    translate: TranslateService,
+    private readonly visitStatsService: VisitStatsService,
+  ) {
     //translate.addLangs(['en_US', 'fr_FR','zh_CN']);
     translate.setDefaultLang("en");
     translate.use("en");
     registerLocaleData(localeEn);
     registerLocaleData(localeFr);
     registerLocaleData(localeZh);
+  }
+
+  ngOnInit(): void {
+    if (
+      localStorage.getItem('excludeVisitTracking') === 'true'
+      || sessionStorage.getItem('visitRecorded')
+    ) {
+      return;
+    }
+
+    this.visitStatsService.recordVisit().subscribe({
+      next: () => sessionStorage.setItem('visitRecorded', 'true'),
+      error: () => {
+        // Une panne du compteur ne doit jamais bloquer la navigation du visiteur.
+      },
+    });
   }
 }

@@ -8,6 +8,8 @@ import { AboutWebsiteComponent } from './about-website/about-website.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { DemosComponent } from './demos/demos.component';
 import { PhotographyComponent } from './photography/photography.component';
+import { StatsComponent } from './admin/stats/stats.component';
+import { authGuard } from './shared/auth.guard';
 
 
 const routes: Routes = [
@@ -22,6 +24,10 @@ const routes: Routes = [
   {
     path: 'photography',
     component: PhotographyComponent
+  }, {
+    path: 'admin/stats',
+    component: StatsComponent,
+    canActivate: [authGuard]
   }, {
     path: '',
     component: WelcomeComponent

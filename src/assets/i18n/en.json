@@ -122,7 +122,7 @@
         "signUp": "Sign up",
         "enterEmail": "Enter email",
         "enterPassword": "Enter password",
-        "msgForTester": "You can use this account for testing, email: admin@chongyangws.com, password: 12345678"
+        "msgForTester": "You can use this account for testing, email: visitor@cy.studio.com, password: 12345678"
     },
     "userMgt": {
         "dataWarning": "The displayed data is fictional. When testing, do not enter any real personal information.",
@@ -174,5 +174,27 @@
         "userPage_confirm_mdf": "Are you sure to modify the user?",
         "userPage_confirm_title_create": "Create user",
         "userPage_confirm_title_mdf": "Modify user"
+    },
+    "stats": {
+        "title": "Visit statistics",
+        "description": "Track your website activity and traffic.",
+        "pending": "API not connected",
+        "ready": "Data up to date",
+        "summary": "Visit summary",
+        "today": "Visits today",
+        "week": "This week",
+        "total": "Total visits",
+        "lastVisit": "Last visit",
+        "traffic": "Traffic trend",
+        "lastSevenDays": "Last seven days",
+        "noDataTitle": "No data yet",
+        "noDataDescription": "Recorded visits will appear here.",
+        "loading": "Loading statistics…",
+        "errorTitle": "Unable to load statistics",
+        "errorDescription": "Check that the API is running and that your account is authorized.",
+        "retry": "Retry",
+        "excludeDevice": "Exclude this device",
+        "includeDevice": "Resume visit tracking",
+        "deviceExcluded": "Future visits from this device will not be counted."
     }
 }
