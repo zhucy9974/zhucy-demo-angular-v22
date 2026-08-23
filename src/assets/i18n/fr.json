@@ -64,12 +64,20 @@
         "eyebrow": "Galerie personnelle",
         "title": "Photographies",
         "intro": "Une sélection de paysages, de voyages et d'instants que j'ai choisi de partager.",
+        "credit": "Photographies de Chongyang ZHU",
         "galleryLabel": "Premier lot de photographies",
         "close": "Fermer la photographie",
         "exhibitLabel": "Histoire de la photographie",
         "languageSelector": "Langue des histoires",
         "readStory": "Lire l’histoire",
+        "like": "J’aime",
+        "liked": "Aimée",
+        "unlike": "Retirer le J’aime",
         "photos": {
+            "corridorLantern": {
+                "title": "Traverser le temps",
+                "story": "Le couloir ancien baigne dans une lumière tamisée, comme si le temps s’était arrêté entre les jeux d’ombre sur les murs et les arches profondes. Au bout, le salon apparaît soudain en pleine lumière, attendant en silence les visiteurs qui traversent le temps. Quelques pas suffisent pour franchir une époque : quitter le Marrakech d’autrefois et entrer dans le présent."
+            },
             "costaRicaSunset": {
                 "title": "Sous un même soleil",
                 "story": "Certains jouent dans les vagues, tandis que d’autres contemplent le coucher du soleil à deux. L’homme au premier plan ne faisait que passer, mais au moment où j’ai déclenché, il est devenu une partie de la scène. Sous une même lumière, chacun vivait sa propre histoire."
@@ -91,7 +99,7 @@
                 "story": "Ce qui rend le Costa Rica si fascinant, c’est que la vie sauvage ne demeure pas toujours cachée au cœur d’une forêt lointaine. Ces animaux que l’on croyait réservés aux images et à un monde inaccessible peuvent, un matin, apparaître tout près de nous. Descendus des branches jusqu’à la terrasse avec la nonchalance de la forêt, ils ont soudain donné au lointain une distance bien réelle."
             }
         },
-        "comingSoon": "La galerie arrive bientôt",
+        "comingSoon": "D’autres photographies et histoires arrivent bientôt.",
         "comingSoonDescription": "Mes photographies seront progressivement ajoutées à cette page."
     },
     "aboutWebsite":{

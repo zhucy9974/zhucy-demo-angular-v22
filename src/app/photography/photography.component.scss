@@ -29,17 +29,24 @@ h1 {
 
 .photography-intro { color: #626c75; font-size: 1.2rem; line-height: 1.7; }
 
+.photography-credit {
+  margin: 0.75rem 0 0;
+  color: #cbd0d2;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .gallery-language-switcher {
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  margin-top: 1rem;
   padding: 0.28rem 0.55rem;
   color: #98a1a5;
   background: #fff;
   border: 1px solid #d9dfdf;
   border-radius: 2rem;
-  box-shadow: 0 0.25rem 0.8rem rgb(25 38 43 / 6%);
 }
 
 .gallery-language-switcher button {
@@ -69,29 +76,94 @@ h1 {
   column-gap: clamp(0.85rem, 2vw, 1.5rem);
 }
 
+.gallery-coming-soon {
+  margin: clamp(2rem, 5vw, 4rem) auto 0;
+  color: #7b858a;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-style: italic;
+  text-align: center;
+}
+
 .photo-card {
   position: relative;
   display: block;
   width: 100%;
   margin: 0 0 clamp(0.85rem, 2vw, 1.5rem);
-  padding: 0;
   overflow: hidden;
   break-inside: avoid;
-  cursor: zoom-in;
   background: #e5e9e9;
-  border: 0;
   border-radius: 0.35rem;
   box-shadow: 0 0.45rem 1.5rem rgb(25 38 43 / 12%);
 }
 
-.photo-card img { display: block; width: 100%; height: auto; transition: transform 350ms ease, filter 350ms ease; }
-.photo-card:hover img, .photo-card:focus-visible img { filter: saturate(1.08) contrast(1.03); transform: scale(1.025); }
-.photo-card:focus-visible { outline: 3px solid #087f76; outline-offset: 4px; }
+.photo-open {
+  display: block;
+  width: 100%;
+  padding: 0;
+  cursor: zoom-in;
+  background: transparent;
+  border: 0;
+}
 
-.story-badge {
+.photo-card img { display: block; width: 100%; height: auto; transition: transform 350ms ease, filter 350ms ease; }
+.photo-open:hover img, .photo-open:focus-visible img { filter: saturate(1.08) contrast(1.03); transform: scale(1.025); }
+.photo-open:focus-visible { outline: 3px solid #087f76; outline-offset: -3px; }
+
+.photo-card-actions {
   position: absolute;
   right: 0.75rem;
   bottom: 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+  pointer-events: none;
+}
+
+.like-button {
+  display: inline-flex;
+  min-width: 2.15rem;
+  height: 2.15rem;
+  padding: 0 0.55rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  pointer-events: auto;
+  color: #fff;
+  cursor: pointer;
+  background: rgb(10 15 18 / 76%);
+  border: 1px solid rgb(255 255 255 / 24%);
+  border-radius: 50%;
+  backdrop-filter: blur(6px);
+  font-size: 1.25rem;
+  line-height: 1;
+  transition: color 180ms ease, background 180ms ease, transform 180ms ease;
+}
+
+.like-count {
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.like-button:disabled,
+.caption-like-button:disabled,
+.lightbox-image-like:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.like-button:hover,
+.like-button:focus-visible {
+  background: rgb(10 15 18 / 92%);
+  transform: scale(1.08);
+}
+
+.like-button.liked,
+.caption-like-button.liked,
+.lightbox-image-like.liked {
+  color: #e04f5f;
+}
+
+.story-badge {
   padding: 0.42rem 0.7rem;
   color: #fff;
   pointer-events: none;
@@ -101,7 +173,6 @@ h1 {
   backdrop-filter: blur(6px);
   font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.025em;
   line-height: 1;
   box-shadow: 0 0.25rem 0.8rem rgb(0 0 0 / 20%);
 }
@@ -114,7 +185,7 @@ h1 {
   }
 
   .photo-card:hover .story-badge,
-  .photo-card:focus-visible .story-badge {
+  .photo-open:focus-visible + .photo-card-actions .story-badge {
     opacity: 1;
     transform: translateY(0);
   }
@@ -133,6 +204,7 @@ h1 {
 }
 
 .lightbox-content {
+  position: relative;
   display: grid;
   min-width: 0;
   max-width: min(1500px, 100%);
@@ -159,7 +231,6 @@ h1 {
 .lightbox-content.has-caption img {
   width: auto;
   height: auto;
-  min-height: 0;
   max-width: min(calc(100vw - 460px), 1140px);
   max-height: calc(100vh - 2rem);
   object-fit: contain;
@@ -169,6 +240,7 @@ h1 {
 }
 
 .photo-caption {
+  position: relative;
   display: flex;
   width: 100%;
   min-width: 0;
@@ -182,9 +254,52 @@ h1 {
 
 .caption-language-switcher {
   align-self: flex-end;
-  margin: auto 0 0;
+  margin: 0;
   background: transparent;
   box-shadow: none;
+}
+
+.caption-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 2rem;
+}
+
+.caption-actions > * {
+  height: 2.25rem;
+}
+
+.caption-like-button,
+.lightbox-image-like {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.7rem;
+  color: #657076;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #d9dfdf;
+  border-radius: 2rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.caption-like-button span,
+.lightbox-image-like span {
+  font-size: 1.1rem;
+}
+
+.lightbox-image-like {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  color: #fff;
+  background: rgb(10 15 18 / 76%);
+  border-color: rgb(255 255 255 / 24%);
+  backdrop-filter: blur(6px);
 }
 
 .caption-label {
@@ -221,25 +336,48 @@ h1 {
 
 .lightbox-close {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  z-index: 2;
+  top: 0.8rem;
+  right: 0.8rem;
   display: grid;
-  width: 3rem;
-  height: 3rem;
-  padding: 0 0 0.2rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0 0 0.15rem;
   place-items: center;
-  color: #fff;
   cursor: pointer;
-  background: rgb(255 255 255 / 10%);
-  border: 1px solid rgb(255 255 255 / 35%);
   border-radius: 50%;
-  font-size: 2rem;
+  font-size: 1.6rem;
+  font-weight: 300;
   line-height: 1;
+}
+
+.mobile-photo-close {
+  display: none;
 }
 
 @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
 
 @media (max-width: 800px) {
+  .mobile-photo-close {
+    top: 0.7rem;
+    right: 0.7rem;
+    display: grid;
+    width: 1.75rem;
+    height: 1.75rem;
+    padding-bottom: 0.1rem;
+    color: #fff;
+    background: rgb(10 15 18 / 58%);
+    border: 1px solid rgb(255 255 255 / 38%);
+    font-size: 1.25rem;
+    backdrop-filter: blur(5px);
+  }
+
+  .lightbox-image-like {
+    right: 0.7rem;
+    bottom: 0.7rem;
+    left: auto;
+  }
+
   .lightbox {
     align-items: start;
     padding: 0.75rem;
@@ -262,8 +400,13 @@ h1 {
   }
 
   .caption-language-switcher {
+    margin: 0;
+  }
+
+  .caption-actions {
     order: -1;
     margin: 0 0 1.25rem;
+    padding: 0;
   }
 
   .photo-caption {
@@ -274,5 +417,5 @@ h1 {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .photo-card img, .story-badge, .lightbox { transition: none; animation: none; }
+  .photo-card img, .like-button, .story-badge, .lightbox { transition: none; animation: none; }
 }

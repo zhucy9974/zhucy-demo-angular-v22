@@ -3,39 +3,65 @@
     <p>{{ 'photography.eyebrow' | translate }}</p>
     <h1>{{ 'photography.title' | translate }}</h1>
     <p class="photography-intro">{{ 'photography.intro' | translate }}</p>
+    <p class="photography-credit">{{ 'photography.credit' | translate }}</p>
   </header>
 
   <section class="photo-gallery" [attr.aria-label]="'photography.galleryLabel' | translate">
     @for (photo of photos; track photo.src; let first = $first) {
-      <button class="photo-card" type="button" (click)="openPhoto(photo)">
-        <img [src]="photo.src" [alt]="photo.alt" [attr.loading]="first ? 'eager' : 'lazy'" decoding="async" />
-        @if (photo.titleKey) {
-          <span class="story-badge">{{ 'photography.readStory' | translate }} <span aria-hidden="true">→</span></span>
-        }
-      </button>
+      <article class="photo-card" [class.has-story]="photo.titleKey">
+        <button class="photo-open" type="button" (click)="openPhoto(photo)">
+          <img [src]="photo.src" [alt]="photo.alt" [attr.loading]="first ? 'eager' : 'lazy'" decoding="async" />
+        </button>
+        <div class="photo-card-actions">
+          @if (photo.titleKey) {
+            <span class="story-badge">{{ 'photography.readStory' | translate }} <span aria-hidden="true">→</span></span>
+          }
+          <button
+            class="like-button"
+            type="button"
+            [class.liked]="isLiked(photo)"
+            [attr.aria-pressed]="isLiked(photo)"
+            [attr.aria-label]="(isLiked(photo) ? 'photography.unlike' : 'photography.like') | translate"
+            [disabled]="pendingPhotoIds.has(photo.id)"
+            (click)="toggleLike(photo)"
+          ><span aria-hidden="true">{{ isLiked(photo) ? '♥' : '♡' }}</span><span class="like-count">{{ likeCount(photo) }}</span></button>
+        </div>
+      </article>
     }
   </section>
+  <p class="gallery-coming-soon">{{ 'photography.comingSoon' | translate }}</p>
 </main>
 
 @if (selectedPhoto; as photo) {
   <div class="lightbox" role="dialog" aria-modal="true" [attr.aria-label]="photo.alt" (click)="closePhoto()">
-    <button class="lightbox-close" type="button" (click)="closePhoto()" [attr.aria-label]="'photography.close' | translate">×</button>
     <div class="lightbox-content" [class.has-caption]="photo.titleKey" (click)="$event.stopPropagation()">
       <img [src]="photo.src" [alt]="photo.alt" />
+      <button class="lightbox-close mobile-photo-close" type="button" (click)="closePhoto()" [attr.aria-label]="'photography.close' | translate">×</button>
       @if (photo.titleKey && photo.storyKey) {
         <aside class="photo-caption">
           <p class="caption-label">{{ 'photography.exhibitLabel' | translate }}</p>
           <h2>{{ photo.titleKey | translate }}</h2>
           <p class="caption-meta">{{ photo.place }} <span aria-hidden="true">·</span> {{ photo.date }}</p>
           <p class="caption-story">{{ photo.storyKey | translate }}</p>
-          <div class="gallery-language-switcher caption-language-switcher" role="group" [attr.aria-label]="'photography.languageSelector' | translate">
-            <button type="button" [class.active]="currentLanguage === 'fr'" [attr.aria-pressed]="currentLanguage === 'fr'" (click)="changeLanguage('fr')">FR</button>
-            <span aria-hidden="true">·</span>
-            <button type="button" [class.active]="currentLanguage === 'en'" [attr.aria-pressed]="currentLanguage === 'en'" (click)="changeLanguage('en')">EN</button>
-            <span aria-hidden="true">·</span>
-            <button type="button" [class.active]="currentLanguage === 'zh'" [attr.aria-pressed]="currentLanguage === 'zh'" (click)="changeLanguage('zh')">ZH</button>
+          <div class="caption-actions">
+            <div class="gallery-language-switcher caption-language-switcher" role="group" [attr.aria-label]="'photography.languageSelector' | translate">
+              <button type="button" [class.active]="currentLanguage === 'fr'" [attr.aria-pressed]="currentLanguage === 'fr'" (click)="changeLanguage('fr')">FR</button>
+              <span aria-hidden="true">·</span>
+              <button type="button" [class.active]="currentLanguage === 'en'" [attr.aria-pressed]="currentLanguage === 'en'" (click)="changeLanguage('en')">EN</button>
+              <span aria-hidden="true">·</span>
+              <button type="button" [class.active]="currentLanguage === 'zh'" [attr.aria-pressed]="currentLanguage === 'zh'" (click)="changeLanguage('zh')">ZH</button>
+            </div>
+            <button class="caption-like-button" type="button" [class.liked]="isLiked(photo)" [attr.aria-pressed]="isLiked(photo)" [disabled]="pendingPhotoIds.has(photo.id)" (click)="toggleLike(photo)">
+              <span aria-hidden="true">{{ isLiked(photo) ? '♥' : '♡' }}</span>
+              {{ (isLiked(photo) ? 'photography.liked' : 'photography.like') | translate }} · {{ likeCount(photo) }}
+            </button>
           </div>
         </aside>
+      } @else {
+        <button class="lightbox-image-like" type="button" [class.liked]="isLiked(photo)" [attr.aria-pressed]="isLiked(photo)" [disabled]="pendingPhotoIds.has(photo.id)" (click)="toggleLike(photo)">
+          <span aria-hidden="true">{{ isLiked(photo) ? '♥' : '♡' }}</span>
+          {{ (isLiked(photo) ? 'photography.liked' : 'photography.like') | translate }} · {{ likeCount(photo) }}
+        </button>
       }
     </div>
   </div>

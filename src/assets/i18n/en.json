@@ -64,12 +64,20 @@
         "eyebrow": "Personal gallery",
         "title": "Photography",
         "intro": "A selection of landscapes, journeys and moments I have chosen to share.",
+        "credit": "Photographs by Chongyang ZHU",
         "galleryLabel": "First photography collection",
         "close": "Close photograph",
         "exhibitLabel": "Behind the photograph",
         "languageSelector": "Story language",
         "readStory": "Read story",
+        "like": "Like",
+        "liked": "Liked",
+        "unlike": "Unlike",
         "photos": {
+            "corridorLantern": {
+                "title": "A Passage Through Time",
+                "story": "The old corridor is immersed in dim light, as though time had paused between the play of shadows on the walls and the deep arches. At the far end, the living room suddenly opens into brightness, quietly awaiting visitors crossing through time. In just a few steps, one seems to pass between eras: leaving the Marrakech of the past and entering the present."
+            },
             "costaRicaSunset": {
                 "title": "Under the Same Sun",
                 "story": "Some played in the waves, while others watched the sunset together. The man in the foreground was simply passing by, but when I pressed the shutter, he became part of the scene. Under the same light, each person was living a story of their own."
@@ -91,7 +99,7 @@
                 "story": "What makes Costa Rica so fascinating is that wildlife does not always remain hidden deep within a distant forest. Creatures once seen only in images, belonging to a world that seemed forever beyond reach, may quietly appear beside us one morning. Moving from the branches toward the terrace with the forest’s unhurried ease, they suddenly gave the distant a very real closeness."
             }
         },
-        "comingSoon": "The gallery is coming soon",
+        "comingSoon": "More photos and stories are coming.",
         "comingSoonDescription": "My photographs will gradually be added to this page."
     },
     "aboutWebsite":{
