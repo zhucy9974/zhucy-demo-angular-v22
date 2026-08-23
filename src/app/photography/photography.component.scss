@@ -1,12 +1,14 @@
+:host { display: block; }
+
 .photography-page {
   min-height: calc(100vh - 58px);
-  padding: clamp(4rem, 8vw, 7rem) clamp(1.25rem, 8vw, 8rem);
+  padding: clamp(4rem, 8vw, 7rem) clamp(1rem, 5vw, 5rem) clamp(3rem, 7vw, 6rem);
   background: #f7f8f8;
 }
 
 .photography-header {
   width: min(850px, 100%);
-  margin: 0 auto 3.5rem;
+  margin: 0 auto clamp(2.5rem, 6vw, 4.5rem);
   text-align: center;
 }
 
@@ -25,40 +27,252 @@ h1 {
   font-weight: 700;
 }
 
-.photography-intro {
-  color: #626c75;
-  font-size: 1.2rem;
-  line-height: 1.7;
-}
+.photography-intro { color: #626c75; font-size: 1.2rem; line-height: 1.7; }
 
-.empty-gallery {
-  width: min(1000px, 100%);
-  margin: 0 auto;
-  padding: clamp(3rem, 7vw, 6rem) 2rem;
-  text-align: center;
+.gallery-language-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 1rem;
+  padding: 0.28rem 0.55rem;
+  color: #98a1a5;
   background: #fff;
-  border: 1px dashed #b8c4c7;
-  border-radius: 0.75rem;
+  border: 1px solid #d9dfdf;
+  border-radius: 2rem;
+  box-shadow: 0 0.25rem 0.8rem rgb(25 38 43 / 6%);
 }
 
-.empty-gallery span {
-  display: grid;
-  width: 4rem;
-  height: 4rem;
-  margin: 0 auto 1.25rem;
-  place-items: center;
+.gallery-language-switcher button {
+  padding: 0.1rem 0.18rem;
+  color: #778085;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.gallery-language-switcher button.active {
   color: #087f76;
-  background: #eaf6f4;
+}
+
+.gallery-language-switcher button:focus-visible {
+  outline: 2px solid #087f76;
+  outline-offset: 3px;
+}
+
+.photo-gallery {
+  width: min(1400px, 100%);
+  margin: 0 auto;
+  columns: 3 280px;
+  column-gap: clamp(0.85rem, 2vw, 1.5rem);
+}
+
+.photo-card {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 0 0 clamp(0.85rem, 2vw, 1.5rem);
+  padding: 0;
+  overflow: hidden;
+  break-inside: avoid;
+  cursor: zoom-in;
+  background: #e5e9e9;
+  border: 0;
+  border-radius: 0.35rem;
+  box-shadow: 0 0.45rem 1.5rem rgb(25 38 43 / 12%);
+}
+
+.photo-card img { display: block; width: 100%; height: auto; transition: transform 350ms ease, filter 350ms ease; }
+.photo-card:hover img, .photo-card:focus-visible img { filter: saturate(1.08) contrast(1.03); transform: scale(1.025); }
+.photo-card:focus-visible { outline: 3px solid #087f76; outline-offset: 4px; }
+
+.story-badge {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  padding: 0.42rem 0.7rem;
+  color: #fff;
+  pointer-events: none;
+  background: rgb(10 15 18 / 76%);
+  border: 1px solid rgb(255 255 255 / 24%);
+  border-radius: 2rem;
+  backdrop-filter: blur(6px);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  line-height: 1;
+  box-shadow: 0 0.25rem 0.8rem rgb(0 0 0 / 20%);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .story-badge {
+    opacity: 0;
+    transform: translateY(0.35rem);
+    transition: opacity 220ms ease, transform 220ms ease;
+  }
+
+  .photo-card:hover .story-badge,
+  .photo-card:focus-visible .story-badge {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.lightbox {
+  position: fixed;
+  z-index: 1100;
+  inset: 0;
+  display: grid;
+  padding: clamp(1rem, 4vw, 3rem);
+  place-items: center;
+  cursor: zoom-out;
+  background: rgb(10 15 18 / 94%);
+  animation: fade-in 180ms ease-out;
+}
+
+.lightbox-content {
+  display: grid;
+  min-width: 0;
+  max-width: min(1500px, 100%);
+  max-height: calc(100vh - 2rem);
+  cursor: default;
+}
+
+.lightbox-content.has-caption {
+  grid-template-columns: auto 360px;
+  overflow: hidden;
+  background: #f5f2eb;
+  border-radius: 0.25rem;
+  box-shadow: 0 1rem 4rem rgb(0 0 0 / 45%);
+}
+
+.lightbox img {
+  max-width: 100%;
+  max-height: calc(100vh - 2rem);
+  object-fit: contain;
+  border-radius: 0.2rem;
+  box-shadow: 0 1rem 4rem rgb(0 0 0 / 45%);
+}
+
+.lightbox-content.has-caption img {
+  width: auto;
+  height: auto;
+  min-height: 0;
+  max-width: min(calc(100vw - 460px), 1140px);
+  max-height: calc(100vh - 2rem);
+  object-fit: contain;
+  background: #0a0f12;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.photo-caption {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-self: stretch;
+  padding: clamp(1.75rem, 3vw, 3.25rem);
+  overflow-y: auto;
+  color: #283036;
+}
+
+.caption-language-switcher {
+  align-self: flex-end;
+  margin: auto 0 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.caption-label {
+  margin: 0 0 1.25rem;
+  color: #087f76;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.photo-caption h2 {
+  margin: 0 0 0.65rem;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.caption-meta {
+  padding-bottom: 1.25rem;
+  color: #687178;
+  border-bottom: 1px solid #d4d0c7;
+  font-size: 0.9rem;
+}
+
+.caption-story {
+  margin: 1.5rem 0 0;
+  color: #4f585e;
+  font-size: 1rem;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: grid;
+  width: 3rem;
+  height: 3rem;
+  padding: 0 0 0.2rem;
+  place-items: center;
+  color: #fff;
+  cursor: pointer;
+  background: rgb(255 255 255 / 10%);
+  border: 1px solid rgb(255 255 255 / 35%);
   border-radius: 50%;
   font-size: 2rem;
+  line-height: 1;
 }
 
-.empty-gallery h2 {
-  color: #303840;
-  font-size: 1.5rem;
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+
+@media (max-width: 800px) {
+  .lightbox {
+    align-items: start;
+    padding: 0.75rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .lightbox-content.has-caption {
+    width: 100%;
+    min-width: 0;
+    grid-template-columns: 1fr;
+    max-height: none;
+  }
+
+  .lightbox-content.has-caption img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: 62vh;
+  }
+
+  .caption-language-switcher {
+    order: -1;
+    margin: 0 0 1.25rem;
+  }
+
+  .photo-caption {
+    padding: 1.5rem;
+    overflow-x: hidden;
+    overflow-y: visible;
+  }
 }
 
-.empty-gallery p {
-  margin: 0;
-  color: #737d85;
+@media (prefers-reduced-motion: reduce) {
+  .photo-card img, .story-badge, .lightbox { transition: none; animation: none; }
 }

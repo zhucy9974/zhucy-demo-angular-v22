@@ -64,6 +64,33 @@
         "eyebrow": "Galerie personnelle",
         "title": "Photographies",
         "intro": "Une sélection de paysages, de voyages et d'instants que j'ai choisi de partager.",
+        "galleryLabel": "Premier lot de photographies",
+        "close": "Fermer la photographie",
+        "exhibitLabel": "Histoire de la photographie",
+        "languageSelector": "Langue des histoires",
+        "readStory": "Lire l’histoire",
+        "photos": {
+            "costaRicaSunset": {
+                "title": "Sous un même soleil",
+                "story": "Certains jouent dans les vagues, tandis que d’autres contemplent le coucher du soleil à deux. L’homme au premier plan ne faisait que passer, mais au moment où j’ai déclenché, il est devenu une partie de la scène. Sous une même lumière, chacun vivait sa propre histoire."
+            },
+            "aiguilleDuMidi": {
+                "title": "La hauteur du courage",
+                "story": "En levant les yeux, la plateforme panoramique et son restaurant se détachaient au-dessus de nous. Nul besoin d’être alpiniste pour venir jusqu’ici, mais le vent glacial, la neige et l’air raréfié rappelaient à chaque visiteur que le véritable courage ne consiste pas à ne rien craindre, mais à avancer malgré tout, avec humilité et respect."
+            },
+            "marrakechStreet": {
+                "title": "Le tumulte silencieux",
+                "story": "Le noir et blanc efface les aspérités et le désordre des rues de Marrakech, comme s’il appuyait sur la touche silence de la ville. Les véhicules s’entassent, immobiles dans l’image, tandis que derrière chaque vitre indistincte, des vies poursuivent leur course quotidienne. L’obturateur a figé cet instant, sans parvenir à dissimuler le pouls agité de la ville."
+            },
+            "costaRicaBoat": {
+                "title": "Ceux qui regardaient le couchant",
+                "story": "Le crépuscule descendait lentement sur la mer lorsqu’un bateau d’excursion passa devant le soleil couchant. À bord, les passagers regardaient au loin, attendant les dernières lueurs du jour ; depuis un autre bateau, je les observais par-delà la surface scintillante de la mer avant de déclencher doucement. Ils emportaient le soleil dans leur regard, tandis que je les laissais dans sa lumière."
+            },
+            "costaRicaMonkeys": {
+                "title": "Quand le lointain se rapproche",
+                "story": "Ce qui rend le Costa Rica si fascinant, c’est que la vie sauvage ne demeure pas toujours cachée au cœur d’une forêt lointaine. Ces animaux que l’on croyait réservés aux images et à un monde inaccessible peuvent, un matin, apparaître tout près de nous. Descendus des branches jusqu’à la terrasse avec la nonchalance de la forêt, ils ont soudain donné au lointain une distance bien réelle."
+            }
+        },
         "comingSoon": "La galerie arrive bientôt",
         "comingSoonDescription": "Mes photographies seront progressivement ajoutées à cette page."
     },

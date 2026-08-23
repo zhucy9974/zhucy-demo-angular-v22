@@ -5,9 +5,38 @@
     <p class="photography-intro">{{ 'photography.intro' | translate }}</p>
   </header>
 
-  <section class="empty-gallery">
-    <span aria-hidden="true">＋</span>
-    <h2>{{ 'photography.comingSoon' | translate }}</h2>
-    <p>{{ 'photography.comingSoonDescription' | translate }}</p>
+  <section class="photo-gallery" [attr.aria-label]="'photography.galleryLabel' | translate">
+    @for (photo of photos; track photo.src; let first = $first) {
+      <button class="photo-card" type="button" (click)="openPhoto(photo)">
+        <img [src]="photo.src" [alt]="photo.alt" [attr.loading]="first ? 'eager' : 'lazy'" decoding="async" />
+        @if (photo.titleKey) {
+          <span class="story-badge">{{ 'photography.readStory' | translate }} <span aria-hidden="true">→</span></span>
+        }
+      </button>
+    }
   </section>
 </main>
+
+@if (selectedPhoto; as photo) {
+  <div class="lightbox" role="dialog" aria-modal="true" [attr.aria-label]="photo.alt" (click)="closePhoto()">
+    <button class="lightbox-close" type="button" (click)="closePhoto()" [attr.aria-label]="'photography.close' | translate">×</button>
+    <div class="lightbox-content" [class.has-caption]="photo.titleKey" (click)="$event.stopPropagation()">
+      <img [src]="photo.src" [alt]="photo.alt" />
+      @if (photo.titleKey && photo.storyKey) {
+        <aside class="photo-caption">
+          <p class="caption-label">{{ 'photography.exhibitLabel' | translate }}</p>
+          <h2>{{ photo.titleKey | translate }}</h2>
+          <p class="caption-meta">{{ photo.place }} <span aria-hidden="true">·</span> {{ photo.date }}</p>
+          <p class="caption-story">{{ photo.storyKey | translate }}</p>
+          <div class="gallery-language-switcher caption-language-switcher" role="group" [attr.aria-label]="'photography.languageSelector' | translate">
+            <button type="button" [class.active]="currentLanguage === 'fr'" [attr.aria-pressed]="currentLanguage === 'fr'" (click)="changeLanguage('fr')">FR</button>
+            <span aria-hidden="true">·</span>
+            <button type="button" [class.active]="currentLanguage === 'en'" [attr.aria-pressed]="currentLanguage === 'en'" (click)="changeLanguage('en')">EN</button>
+            <span aria-hidden="true">·</span>
+            <button type="button" [class.active]="currentLanguage === 'zh'" [attr.aria-pressed]="currentLanguage === 'zh'" (click)="changeLanguage('zh')">ZH</button>
+          </div>
+        </aside>
+      }
+    </div>
+  </div>
+}

@@ -30,7 +30,7 @@ import { registerLocaleData, getLocaleId } from '@angular/common';
 })
 export class NavbarComponent implements OnInit {
   @ViewChild('languageDropdown')
-  private languageDropdown!: ElementRef<HTMLElement>;
+  private languageDropdown?: ElementRef<HTMLElement>;
 
   private readonly router = inject(Router);
   private readonly navbarService = inject(NavbarService);
@@ -116,7 +116,10 @@ export class NavbarComponent implements OnInit {
 
   @HostListener('document:click', ['$event'])
   closeLanguageMenuOnOutsideClick(event: MouseEvent): void {
-    const dropdownElement = this.languageDropdown.nativeElement;
+    const dropdownElement = this.languageDropdown?.nativeElement;
+    if (!dropdownElement) {
+      return;
+    }
     const clickedElement = event.target as Node;
 
     if (!dropdownElement.contains(clickedElement)) {
