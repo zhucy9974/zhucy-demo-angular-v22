@@ -51,6 +51,11 @@
         "requiredAndEmail": "Required and right email format required"
     },
     "welcome": {
+        "personalGreeting": "Through my lens",
+        "personalTitle": "Preserving Stories of Light and Shadow",
+        "personalDescription": "I photograph landscapes, journeys and fleeting moments\u00a0—\u00a0fragments of life that light allows us to keep.",
+        "personalNote": "Landscapes · journeys · encounters",
+        "personalDiscover": "Explore the gallery",
         "sentence": "Welcome to Chongyang Studio! :)",
         "greeting": "Hello, I'm Chongyang",
         "jobTitle": "Senior Full Stack Java Engineer",
@@ -127,8 +132,20 @@
         "hosting":"Hosting",
         "sourceCode":"Code and tools"
     },
+    "aboutPhotographer": {
+        "eyebrow": "About the photographer",
+        "titleLine1": "Encountering the Light",
+        "titleLine2": "Around Us",
+        "paragraph1": "I rarely photograph only what I expected to see. What draws me is often an unexpected moment close by: a silhouette crossing the light, strangers absorbed in a landscape, or a passage between two spaces and two eras.",
+        "paragraph2": "These photographs are fragments of life, memories of journeys, and my way of preserving what those moments made me feel. I do not look for the perfect scene; I wait for the unexpected detail that gives it a life of its own.",
+        "quote": "Every photograph keeps something that the eye alone would have let slip away.",
+        "discover": "Explore the photographs",
+        "photoAlt": "Chongyang ZHU looking toward the mountains"
+    },
     "navbar": {
         "title": "Chongyang Studio",
+        "galleryTitle": "Chongyang Gallery",
+        "aboutPhotographer": "The photographer",
         "home": "Home",
         "userMgt": "Angular Lab",
         "photography": "Photography",

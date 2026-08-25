@@ -1,5 +1,5 @@
 export const environment = {
-  name:"prod",
+  name: 'personal',
   production: true,
-  professionalVersion: true
+  professionalVersion: false,
 };

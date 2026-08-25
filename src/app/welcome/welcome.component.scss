@@ -107,6 +107,25 @@ h1 {
   border-color: #fff;
 }
 
+.personal-welcome {
+  background:
+    linear-gradient(90deg, rgb(8 15 18 / 28%), rgb(8 15 18 / 5%)),
+    url('../../assets/images/home-gallery-bg.webp') center 58% / cover no-repeat;
+}
+
+.personal-welcome .hero-content {
+  background: linear-gradient(145deg, rgb(18 31 34 / 90%), rgb(24 55 57 / 82%));
+}
+
+.personal-note {
+  margin: 0 0 2rem;
+  color: #b9cfce;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 0.9rem;
+  font-style: italic;
+  letter-spacing: 0.06em;
+}
+
 @media (max-width: 991.98px) {
   .welcome-page {
     background-position: 35% center;

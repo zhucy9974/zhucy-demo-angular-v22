@@ -51,6 +51,11 @@
         "requiredAndEmail": "Obligatoire et veuillez saisir le bon format d'email."
     },
     "welcome": {
+        "personalGreeting": "À travers mon objectif",
+        "personalTitle": "Préserver les histoires d’ombre et de lumière",
+        "personalDescription": "Je photographie des paysages, des voyages et des instants fugaces\u00a0—\u00a0des fragments de vie que la lumière nous permet de garder.",
+        "personalNote": "Paysages · voyages · rencontres",
+        "personalDiscover": "Découvrir la galerie",
         "sentence": "Bienvenue chez Chongyang Studio ! :)",
         "greeting": "Bonjour, je suis Chongyang",
         "jobTitle": "Ingénieur senior Java Full Stack",
@@ -127,8 +132,20 @@
         "hosting":"Hébergement",
         "sourceCode":"Code et outils"
     },
+    "aboutPhotographer": {
+        "eyebrow": "À propos du photographe",
+        "titleLine1": "Rencontrer la lumière",
+        "titleLine2": "autour de nous",
+        "paragraph1": "Je photographie rarement seulement ce que je m’attendais à voir. Ce qui m’attire est souvent un instant inattendu tout près : une silhouette qui traverse la lumière, des inconnus absorbés par le paysage, ou un passage entre deux espaces et deux époques.",
+        "paragraph2": "Ces photographies sont des fragments de vie, des souvenirs de voyage, mais aussi ma manière de fixer ce que ces instants m’ont fait ressentir. Je ne cherche pas la scène parfaite ; j’attends plutôt le détail inattendu qui lui donne une vie propre.",
+        "quote": "Chaque photographie garde quelque chose que le regard seul aurait laissé partir.",
+        "discover": "Découvrir les photographies",
+        "photoAlt": "Chongyang ZHU regardant les montagnes"
+    },
     "navbar": {
         "title": "Chongyang Studio",
+        "galleryTitle": "Chongyang Gallery",
+        "aboutPhotographer": "Le photographe",
         "home": "Accueil",
         "userMgt": "Atelier Angular",
         "photography": "Photographies",

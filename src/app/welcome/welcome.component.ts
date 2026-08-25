@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { environment } from '../../environments/environment';
 
 @Component({
   standalone: true,
@@ -10,5 +11,7 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrls: ['./welcome.component.scss'],
 })
 export class WelcomeComponent implements OnInit {
+  readonly professionalVersion = environment.professionalVersion;
+
   ngOnInit(): void {}
 }

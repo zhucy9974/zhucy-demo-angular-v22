@@ -20,6 +20,7 @@ import { NavbarService } from './navbar.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { registerLocaleData, getLocaleId } from '@angular/common';
+import { environment } from '../../environments/environment';
 
 @Component({
   standalone: true,
@@ -29,6 +30,8 @@ import { registerLocaleData, getLocaleId } from '@angular/common';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
+  readonly professionalVersion = environment.professionalVersion;
+  readonly homeRoute = environment.professionalVersion ? '/welcome' : '/home';
   @ViewChild('languageDropdown')
   private languageDropdown?: ElementRef<HTMLElement>;
 

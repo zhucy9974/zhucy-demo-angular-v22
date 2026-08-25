@@ -51,6 +51,11 @@
         "requiredAndEmail": "必填, 并请输入正确的邮箱地址"
     },
     "welcome": {
+        "personalGreeting": "透过我的镜头",
+        "personalTitle": "留住光影的故事",
+        "personalDescription": "我记录风景、旅途与稍纵即逝的瞬间\u00a0—\u00a0那些被光留住的生活片段。",
+        "personalNote": "风景 · 旅途 · 相遇",
+        "personalDiscover": "走进摄影画廊",
         "sentence": "欢迎来到 Chongyang Studio！:)",
         "greeting": "你好，我是重阳",
         "jobTitle": "资深 Java 全栈工程师",
@@ -127,8 +132,20 @@
         "hosting":"托管",
         "sourceCode":"代码与工具"
     },
+    "aboutPhotographer": {
+        "eyebrow": "关于摄影者",
+        "titleLine1": "遇见身边的",
+        "titleLine2": "每一束光",
+        "paragraph1": "我很少只拍摄事先期待的画面。真正吸引我的，往往是身边不经意的某个瞬间：一个穿过光影的身影，沉浸在风景中的陌生人，或是连接两处空间与两段时光的通道。",
+        "paragraph2": "这些照片是生活的点滴，是旅途的记忆，也是我定格那些瞬间的感触的方式。我并不刻意寻找完美的场景，而是等待一个意料之外的细节，让画面拥有属于自己的生命。",
+        "quote": "每一张照片，都留住了一些仅凭目光便会悄然消逝的东西。",
+        "discover": "浏览摄影作品",
+        "photoAlt": "Chongyang ZHU 眺望群山的背影"
+    },
     "navbar": {
-      "title": "Chongyang Studio",
+        "title": "Chongyang Studio",
+        "galleryTitle": "Chongyang Gallery",
+        "aboutPhotographer": "摄影者",
       "home": "首页",
       "userMgt": "Angular 练习",
       "photography": "摄影作品",

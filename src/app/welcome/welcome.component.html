@@ -1,10 +1,11 @@
-<main class="welcome-page">
+<main class="welcome-page" [class.personal-welcome]="!professionalVersion">
   <section class="welcome-hero">
     <div class="hero-image" aria-hidden="true">
       <img src="assets/images/welcome-bg.jpg" alt="">
     </div>
 
     <div class="hero-content">
+      @if (professionalVersion) {
       <p class="hero-greeting">{{ 'welcome.greeting' | translate }}</p>
       <h1>{{ 'welcome.jobTitle' | translate }}</h1>
       <p class="hero-description">{{ 'welcome.description' | translate }}</p>
@@ -24,6 +25,17 @@
           {{ 'welcome.photography' | translate }}
         </a>
       </div>
+      } @else {
+        <p class="hero-greeting">{{ 'welcome.personalGreeting' | translate }}</p>
+        <h1>{{ 'welcome.personalTitle' | translate }}</h1>
+        <p class="hero-description">{{ 'welcome.personalDescription' | translate }}</p>
+        <p class="personal-note">{{ 'welcome.personalNote' | translate }}</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-lg" routerLink="/photography">
+            {{ 'welcome.personalDiscover' | translate }}
+          </a>
+        </div>
+      }
     </div>
   </section>
 </main>

@@ -10,9 +10,24 @@ import { DemosComponent } from './demos/demos.component';
 import { PhotographyComponent } from './photography/photography.component';
 import { StatsComponent } from './admin/stats/stats.component';
 import { authGuard } from './shared/auth.guard';
+import { environment } from '../environments/environment';
 
+const publicRoutes: Routes = [
+  {
+    path: 'photography',
+    component: PhotographyComponent
+  },
+  {
+    path: '',
+    component: WelcomeComponent
+  },
+  {
+    path: environment.professionalVersion ? 'welcome' : 'home',
+    component: WelcomeComponent
+  }
+];
 
-const routes: Routes = [
+const professionalRoutes: Routes = [
   {
     path: 'login',
     component: LoginComponent
@@ -22,25 +37,30 @@ const routes: Routes = [
     component: DemosComponent
   },
   {
-    path: 'photography',
-    component: PhotographyComponent
-  }, {
     path: 'admin/stats',
     component: StatsComponent,
     canActivate: [authGuard]
-  }, {
-    path: '',
-    component: WelcomeComponent
-  },{
-    path: 'welcome',
-    component: WelcomeComponent
   }, {
     path: 'aboutWebsite',
     component: AboutWebsiteComponent
   },{
     path: 'aboutMe',
     component: AboutMeComponent
-  },
+  }
+];
+
+const personalRoutes: Routes = [
+  {
+    path: 'about-photographer',
+    loadComponent: () => import('./about-photographer/about-photographer.component')
+      .then(module => module.AboutPhotographerComponent)
+  }
+];
+
+const routes: Routes = [
+  ...publicRoutes,
+  ...(environment.professionalVersion ? professionalRoutes : []),
+  ...(!environment.professionalVersion ? personalRoutes : []),
   {
     path: '**', //souvent on l'utilise pour 404
     component: Page404Component

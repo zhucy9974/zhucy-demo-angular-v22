@@ -67,6 +67,27 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+            },
+            "personal": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.personal.ts"
+                }
+              ],
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2MB",
+                  "maximumError": "5MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "8kB",
+                  "maximumError": "10kB"
+                }
+              ],
+              "outputHashing": "all"
             }
           },
           "defaultConfiguration": "production"
@@ -79,6 +100,9 @@
             },
             "development": {
               "buildTarget": "zhucy-demo-angular-v22:build:development"
+            },
+            "personal": {
+              "buildTarget": "zhucy-demo-angular-v22:build:personal"
             }
           },
           "defaultConfiguration": "development"

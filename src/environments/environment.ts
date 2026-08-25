@@ -4,7 +4,8 @@
 
 export const environment = {
   name:"dev",
-  production: false
+  production: false,
+  professionalVersion: true
 };
 
 /*

@@ -1,0 +1,22 @@
+<main class="photographer-page">
+  <article class="photographer-portrait">
+    <figure>
+      <img src="assets/images/about-photographer.jpg" [alt]="'aboutPhotographer.photoAlt' | translate">
+      <figcaption>Chongyang ZHU</figcaption>
+    </figure>
+
+    <section class="photographer-story">
+      <p class="eyebrow">{{ 'aboutPhotographer.eyebrow' | translate }}</p>
+      <h1>
+        <span>{{ 'aboutPhotographer.titleLine1' | translate }}</span>
+        <span>{{ 'aboutPhotographer.titleLine2' | translate }}</span>
+      </h1>
+      <p>{{ 'aboutPhotographer.paragraph1' | translate }}</p>
+      <p>{{ 'aboutPhotographer.paragraph2' | translate }}</p>
+      <blockquote>{{ 'aboutPhotographer.quote' | translate }}</blockquote>
+      <a class="gallery-link" routerLink="/photography">
+        {{ 'aboutPhotographer.discover' | translate }} <span aria-hidden="true">→</span>
+      </a>
+    </section>
+  </article>
+</main>
