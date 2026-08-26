@@ -35,8 +35,7 @@
 @if (selectedPhoto; as photo) {
   <div class="lightbox" role="dialog" aria-modal="true" [attr.aria-label]="photo.alt" (click)="closePhoto()">
     <div class="lightbox-content" [class.has-caption]="photo.titleKey" (click)="$event.stopPropagation()">
-      <img [src]="photo.src" [alt]="photo.alt" />
-      <button class="lightbox-close mobile-photo-close" type="button" (click)="closePhoto()" [attr.aria-label]="'photography.close' | translate">×</button>
+      <img [src]="photo.src" [alt]="photo.alt" (click)="closePhotoFromImage()" />
       @if (photo.titleKey && photo.storyKey) {
         <aside class="photo-caption">
           <p class="caption-label">{{ 'photography.exhibitLabel' | translate }}</p>

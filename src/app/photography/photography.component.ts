@@ -165,6 +165,12 @@ export class PhotographyComponent implements OnInit {
     this.selectedPhoto = null;
   }
 
+  closePhotoFromImage(): void {
+    if (window.matchMedia('(max-width: 800px)').matches) {
+      this.closePhoto();
+    }
+  }
+
   @HostListener('document:keydown.escape')
   closeOnEscape(): void {
     this.closePhoto();
